@@ -37,7 +37,7 @@
                 <div class="drawer-menu__img2">
                   <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
                 </div>
-                <a href="infomation.html" class="drawer-menu__link">ダイビング情報</a>
+                <a href="<?php echo get_permalink( get_page_by_path('information') ); ?>information.html" class="drawer-menu__link">ダイビング情報</a>
               </li>
               <li class="drawer-menu__description"><a href="./infomation.html#tab__menu-1" class="drawer-menu__link">ライセンス講習</a></li>
               <li class="drawer-menu__description"><a href="./infomation.html#tab__menu-3" class="drawer-menu__link">体験ダイビング</a></li>

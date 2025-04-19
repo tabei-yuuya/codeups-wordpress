@@ -15,3 +15,4 @@ function my_enqueue_scripts() {
     wp_enqueue_script( 'my-script', get_theme_file_uri( '/assets/js/script.js' ), array('jquery'), filemtime( get_theme_file_path( '/assets/js/script.js' ) ), true );
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
+

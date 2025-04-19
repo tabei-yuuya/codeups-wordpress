@@ -45,7 +45,7 @@
       <nav class="header__nav u-desktop">
         <ul class="header__lists">
           <li class="header__list">
-            <a href="<?php echo get_post_type_archive_link('archive'); ?>"class="header__link">
+            <a href="<?php echo get_post_type_archive_link('campaign'); ?>"class="header__link">
               <p class="header__text">Campaign</p>
               <p class="header__text  header__text--sub">キャンペーン</p>
             </a>

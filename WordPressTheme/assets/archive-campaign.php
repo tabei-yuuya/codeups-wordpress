@@ -40,22 +40,23 @@
         </ol>
         <div class="campaign-content__area">
           <ul class="campaign-content__items campaign-cards campaign-cards--grid">
-            <li class="campaign-cards__item campaign-cards__item--campaign">
-              <div href="#" class="campaign-cards__card card">
-                <div class="card__img card__img--campaign__img">
+          <?php if (have_posts()): while (have_posts()): the_post() ;?>
+           <li class="campaign-cards__item campaign-cards__item--campaign">
+            <div href="#" class="campaign-cards__card card">
+              <div class="card__img card__img--campaign__img">
                 <img src="./assets/images/campaign1.jpg" alt="たくさんの魚が泳いでいる画像">
-                </div>
-                <div class="card__contents card__contents--campaign-page">
+              </div>
+              <div class="card__contents card__contents--campaign-page">
                 <div class="card__head">
-                  <div class="card__label">ライセンス講習</div>
+                  <div class="card__label">ライセンス取得</div>
                   <h2 class="card__title card__title--campaign__title">ライセンス取得</h2>
                 </div>
                 <div class="card__border border border--campaign"></div>
                 <div class="card__body">
                   <p class="card__info">全部コミコミ(お一人様)</p>
                   <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;56,000</div>
-                    <div class="card__price card__price--sm">&yen;46,000</div>
+                    <div class="card__price card__price--lg"><?php the_field('campaign_1'); ?></div>
+                    <div class="card__price card__price--sm"><?php the_field('campaign_2'); ?></div>
                   </div>
                   <div class="card__box u-desktop">
                     <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
@@ -65,16 +66,16 @@
                     </div>
                     <div class="card__btn">
                       <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
-                      </div>
+                    </div>
                   </div>
                 </div>
-                </div>
+              </div>
               </div>
             </li>
             <li class="campaign-cards__item campaign-cards__item--campaign">
               <div href="#" class="campaign-cards__card card">
                 <div class="card__img card__img--campaign__img">
-                <img src="./assets/images/campaign2.jpg" alt="海と複数のボートの画像">
+                  <img src="./assets/images/campaign2.jpg" alt="海と複数のボートの画像">
               </div>
               <div class="card__contents card__contents--campaign-page">
                 <div class="card__head">
@@ -85,8 +86,8 @@
                 <div class="card__body">
                   <p class="card__info">全部コミコミ(お一人様)</p>
                   <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;24,000</div>
-                    <div class="card__price card__price--sm">&yen;18,000</div>
+                    <div class="card__price card__price--lg"><?php the_field('campaign_3'); ?></div>
+                    <div class="card__price card__price--sm"><?php the_field('campaign_4'); ?></div>
                   </div>
                   <div class="card__box u-desktop">
                     <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
@@ -116,8 +117,8 @@
                 <div class="card__body">
                   <p class="card__info">全部コミコミ(お一人様)</p>
                   <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;10,000</div>
-                    <div class="card__price card__price--sm">&yen;8,000</div>
+                    <div class="card__price card__price--lg"><?php the_field('campaign_5'); ?></div>
+                    <div class="card__price card__price--sm"><?php the_field('campaign_6'); ?></div>
                   </div>
                   <div class="card__box u-desktop">
                     <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
@@ -147,8 +148,8 @@
                 <div class="card__body">
                   <p class="card__info">全部コミコミ(お一人様)</p>
                   <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;20,000</div>
-                    <div class="card__price card__price--sm">&yen;16,000</div>
+                    <div class="card__price card__price--lg"><?php the_field('campaign_7'); ?></div>
+                    <div class="card__price card__price--sm"><?php the_field('campaign_9'); ?></div>
                   </div>
                   <div class="card__box u-desktop">
                     <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
@@ -164,6 +165,7 @@
               </div>
               </div>
             </li>
+      <?php endwhile; endif ?>
           </ul>
             <div class="campaign-content__pagination pagination">
               <span href="#" class="pagination__prev"></span>
