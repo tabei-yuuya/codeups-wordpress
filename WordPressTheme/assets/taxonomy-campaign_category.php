@@ -26,33 +26,25 @@
 
     <section class="campaign-content campaign-content-layout content-fish">
       <div class="campaign-content__inner inner">
-      <ol class="campaign-content__tab tab">
-        <li><a href="<?php echo get_post_type_archive_link('campaign') ?>" class="tab__item active">all</a></li>
-                  <!-- キャンペーンカテゴリーの項目を取得 -->
-        <?php $campaign_terms = get_terms('campaign_category', array('hide_empty' => false)) ?>
+        <ol class="campaign-content__tab tab">
+          <li><a href="<?php echo get_post_type_archive_link('campaign') ?>" class="tab__item <?php if (!is_tax('campaign_category')) echo 'active'; ?>">all</a></li>
+          <!-- キャンペーンの項目を取得 -->
+          <?php $campaign_terms = get_terms('campaign_category', array('hide_empty' => false)); ?>
           <!-- 繰り返し処理 -->
           <?php foreach ($campaign_terms as $campaign_term) : ?>
-        <li>
-          <a class="tab__item" href="<?php echo get_term_link($campaign_term, 'campaign_category') ?>">
-          <!-- ターム名 -->
-          <?php echo $campaign_term->name; ?>
-        </a>
-        </li>
-        <?php endforeach; ?>
-      </ol>
+            <!-- 繰り返す項目 -->
+          <li>
+            <a href="<?php echo get_term_link($campaign_term, 'campaign_category') ?>" class="tab__item <?php if (is_tax('campaign_category', $campaign_term->term_id)) echo 'active' ?>">
+            <?php echo $campaign_term->name; ?>
+          </a>
+          </li>
+          <?php endforeach; ?>
+        </ol>
         <div class="campaign-content__area">
-        <?php
-          $args = [
-              "post_type" => "campaign",   //投稿タイプ//
-              "posts_per_page" => 4  //表示数//
-          ];
-          $the_query = new WP_Query($args);
-        ?>
-        <?php if ($the_query->have_posts()) : ?>
           <ul class="campaign-content__items campaign-cards campaign-cards--grid">
-          <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <li class="campaign-cards__item campaign-cards__item--campaign">
-              <div href="#" class="campaign-cards__card card">
+              <div class="campaign-cards__card card">
                 <div class="card__img card__img--campaign__img">
                 <img src="<?php the_post_thumbnail_url(); ?>" alt="たくさんの魚が泳いでいる画像">
                 </div>
@@ -73,7 +65,7 @@
 								    }
 								  }
 								?>
-                  <h2 class="card__title card__title--campaign__title"><?php the_title(); ?></h2>
+                <h2 class="card__title card__title--campaign__title"><?php the_title(); ?></h2>
                 </div>
                 <div class="card__border border border--campaign"></div>
                 <div class="card__body">
@@ -96,12 +88,10 @@
                 </div>
               </div>
             </li>
-            <?php endwhile; ?>
-        <?php wp_reset_postdata(); ?>
+            <?php endwhile;
+				endif; ?>
           </ul>
-          <?php else : ?>
-          <p>記事が投稿されていません</p>
-        <?php endif; ?>
+          <!-- <p>記事が投稿されていません</p> -->
             <div class="campaign-content__pagination pagination">
             <?php wp_pagenavi(); ?>
             </div>
