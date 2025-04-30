@@ -8,7 +8,7 @@
   }
 }
 
-.pagination__items{
+.wp-pagenavi{
   display: grid;
   grid-auto-flow: column;
   column-gap:rem(12.5) ;
@@ -17,7 +17,7 @@
   }
 }
 
-.pagination__link{
+.page{
   border: 1px solid $green;
   color: $green;
   background-color: $white;
@@ -29,18 +29,26 @@
   height: rem(38);
   transition: all 0.3s;
 }
-.pagination__link.pagination__link--first{
+.current{
+  color: $white;
+  background-color: $green;
+  border: 1px solid $green;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: rem(38);
+  height: rem(38);
+  transition: all 0.3s;
+}
+
+.page:hover{
   color: $white;
   background-color: $green;
 }
 
-.pagination__link:hover{
-  color: $white;
-  background-color: $green;
-}
-
-.pagination__prev,
-.pagination__next{
+.previouspostslink,
+.nextpostslink{
   border: 1px solid $green;
   color: $green;
   background-color: $white;
@@ -53,7 +61,13 @@
   transition: all 0.3s;
 }
 
-.pagination__next{
+.prev.pagination__link{
+  @include mq("md"){
+    margin-left: rem(-40);
+  }
+}
+
+.next.pagination__link{
   @include mq("md"){
     margin-left: rem(40);
   }
@@ -68,28 +82,28 @@
   transform: rotate(-45deg);
   transition: all 0.3s;
 }
-.pagination__prev::before,
-.pagination__next::before{
+.previouspostslink::before,
+.nextpostslink::before{
   content: "";
   border-top: 1px solid $green;
   border-left: 1px solid $green;
   width: rem(8);
   height: rem(8);
-  transform: rotate(-45deg);
+  transform: rotate(135deg);
   transition: all 0.3s;
 }
 
-.pagination__next::before{
-  transform: rotate(135deg);
+.previouspostslink::before{
+  transform: rotate(-45deg);
 }
 
-.pagination__prev:hover,
+.previouspostslink:hover,
 .pagination__next:hover{
   background-color: $green;
 }
 
-.pagination__prev:hover.pagination__prev::before,
-.pagination__next:hover.pagination__next::before{
+.ppreviouspostslink:hover.previouspostslink::before,
+.nextpostslink:hover.nextpostslink::before{
   border-color: $white;
 }
 

@@ -120,26 +120,58 @@
       <div class="swiper-wrapper">
         <div class="swiper-slide">
           <picture>
-            <source srcset="<?php echo get_theme_file_uri(); ?>/images/pc-mv1.jpg" media="(min-width: 768px)" >
-            <img src="<?php echo get_theme_file_uri(); ?>/images/sp-mv1.jpg" alt="ウミガメがとても綺麗な海を泳いでいる画像">
+            <?php
+              $image = get_field('sp_1');
+              if ($image) : ?>
+                <source srcset="<?php echo esc_url($image['url']); ?>" media="(max-width: 768px)" >
+              <?php endif; ?>
+            <?php
+              $image = get_field('pc_1');
+              if ($image) : ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+              <?php endif; ?>
           </picture>
         </div>
         <div class="swiper-slide">
-          <picture>
-            <source srcset="<?php echo get_theme_file_uri(); ?>/images/pc-mv2.jpg" media="(min-width: 768px)" >
-            <img src="<?php echo get_theme_file_uri(); ?>/images/sp-mv2.jpg" alt="2人のダイバーがウミガメを見ている">
+        <picture>
+          <?php
+            $image = get_field('sp_2');
+            if ($image) : ?>
+              <source srcset="<?php echo esc_url($image['url']); ?>" media="(max-width: 768px)" >
+            <?php endif; ?>
+            <?php
+              $image = get_field('pc_2');
+              if ($image) : ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+              <?php endif; ?>
           </picture>
         </div>
        <div class="swiper-slide">
-          <picture>
-            <source srcset="<?php echo get_theme_file_uri(); ?>/images/pc-mv3.jpg" media="(min-width: 768px)" >
-            <img src="<?php echo get_theme_file_uri(); ?>/images/sp-mv3.jpg" alt="島と複数の船が海の上を進んでいる画像">
+       <picture>
+          <?php
+            $image = get_field('sp_3');
+            if ($image) : ?>
+              <source srcset="<?php echo esc_url($image['url']); ?>" media="(max-width: 768px)" >
+            <?php endif; ?>
+            <?php
+              $image = get_field('pc_3');
+              if ($image) : ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+              <?php endif; ?>
           </picture>
         </div>
         <div class="swiper-slide">
-          <picture>
-            <source srcset="<?php echo get_theme_file_uri(); ?>/images/pc-mv4.jpg" media="(min-width: 768px)" >
-            <img src="<?php echo get_theme_file_uri(); ?>/images/sp-mv4.jpg" alt="砂浜とエメラルドブルーの海の画像">
+        <picture>
+          <?php
+            $image = get_field('sp_4');
+            if ($image) : ?>
+              <source srcset="<?php echo esc_url($image['url']); ?>" media="(max-width: 768px)" >
+            <?php endif; ?>
+            <?php
+              $image = get_field('pc_4');
+              if ($image) : ?>
+                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>">
+              <?php endif; ?>
           </picture>
         </div>
       </div>

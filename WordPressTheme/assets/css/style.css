@@ -2547,7 +2547,7 @@ body {
 	justify-content: space-between;
 }
 
-.pagination__items {
+.wp-pagenavi {
 	grid-column-gap: 0.78125rem;
 	-moz-column-gap: 0.78125rem;
 	column-gap: 0.78125rem;
@@ -2555,7 +2555,7 @@ body {
 	grid-auto-flow: column;
 }
 
-.pagination__link {
+.page {
 	align-items: center;
 	background-color: #fff;
 	border: 1px solid #408f95;
@@ -2568,18 +2568,26 @@ body {
 	width: 2.375rem;
 }
 
-.pagination__link.pagination__link--first {
+.current {
+	align-items: center;
+	background-color: #408f95;
+	border: 1px solid #408f95;
+	color: #fff;
+	display: inline-block;
+	display: flex;
+	height: 2.375rem;
+	justify-content: center;
+	transition: all 0.3s;
+	width: 2.375rem;
+}
+
+.page:hover {
 	background-color: #408f95;
 	color: #fff;
 }
 
-.pagination__link:hover {
-	background-color: #408f95;
-	color: #fff;
-}
-
-.pagination__prev,
-.pagination__next {
+.previouspostslink,
+.nextpostslink {
 	align-items: center;
 	background-color: #fff;
 	border: 1px solid #408f95;
@@ -2602,28 +2610,28 @@ body {
 	width: 0.5rem;
 }
 
-.pagination__prev::before,
-.pagination__next::before {
+.previouspostslink::before,
+.nextpostslink::before {
 	border-left: 1px solid #408f95;
 	border-top: 1px solid #408f95;
 	content: "";
 	height: 0.5rem;
-	transform: rotate(-45deg);
+	transform: rotate(135deg);
 	transition: all 0.3s;
 	width: 0.5rem;
 }
 
-.pagination__next::before {
-	transform: rotate(135deg);
+.previouspostslink::before {
+	transform: rotate(-45deg);
 }
 
-.pagination__prev:hover,
+.previouspostslink:hover,
 .pagination__next:hover {
 	background-color: #408f95;
 }
 
-.pagination__prev:hover.pagination__prev::before,
-.pagination__next:hover.pagination__next::before {
+.ppreviouspostslink:hover.previouspostslink::before,
+.nextpostslink:hover.nextpostslink::before {
 	border-color: #fff;
 }
 
@@ -4184,11 +4192,15 @@ html {
 	justify-content: center;
 }
 
-.pagination__items {
+.wp-pagenavi {
 	margin-left: 2.5rem;
 }
 
-.pagination__next {
+.prev.pagination__link {
+	margin-left: -2.5rem;
+}
+
+.next.pagination__link {
 	margin-left: 2.5rem;
 }
 

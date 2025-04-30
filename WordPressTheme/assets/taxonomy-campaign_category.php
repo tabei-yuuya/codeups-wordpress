@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+
 <!-- main visual -->
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
@@ -13,20 +14,25 @@
   </div>
 <!-- main visual -->
 
-<main>
-    <!-- campaign-page -->
-    <?php if (function_exists('bcn_display')) { ?>
-      <div class="breadcrumb breadcrumb-layout">
-        <div class="breadcrumb__inner inner">
-        <?php bcn_display(); ?>
-        </div>
-      </div>
-    <?php } ?>
+<!-- page-top -->
+<div class="page-top">
+</div>
+<!-- page-top -->
 
+<!-- main -->
+  <main>
+    <!-- campaign-page -->
+    <div class="breadcrumb breadcrumb-layout">
+      <div class="breadcrumb__inner inner">
+        <a href="index.html" class="breadcrumb__link">top</a>
+        <span class="breadcrumb__arrow"></span>
+        <a href="#" class="breadcrumb__link">キャンペーン</a>
+      </div>
+    </div>
 
     <section class="campaign-content campaign-content-layout content-fish">
       <div class="campaign-content__inner inner">
-        <ol class="campaign-content__tab tab">
+      <ol class="campaign-content__tab tab">
           <li><a href="<?php echo get_post_type_archive_link('campaign') ?>" class="tab__item <?php if (!is_tax('campaign_category')) echo 'active'; ?>">all</a></li>
           <!-- キャンペーンの項目を取得 -->
           <?php $campaign_terms = get_terms('campaign_category', array('hide_empty' => false)); ?>
@@ -43,13 +49,17 @@
         <div class="campaign-content__area">
           <ul class="campaign-content__items campaign-cards campaign-cards--grid">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+          <!-- <p><?php the_time( get_option( 'date_format' ) ); ?></p>
+          <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p> -->
+            <!-- ループ処理開始 -->
+            <!-- 表示する中身（ここから） -->
             <li class="campaign-cards__item campaign-cards__item--campaign">
-              <div class="campaign-cards__card card">
-                <div class="card__img card__img--campaign__img">
-                <img src="<?php the_post_thumbnail_url(); ?>" alt="たくさんの魚が泳いでいる画像">
-                </div>
-                <div class="card__contents card__contents--campaign-page">
-                <div class="card__head">
+            <div href="#" class="campaign-cards__card card">
+              <div class="card__img card__img--campaign__img">
+              <?php the_post_thumbnail( 'full'); ?>
+              </div>
+              <div class="card__contents card__contents--campaign-page">
+              <div class="card__head">
                 <?php
 								  $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
 								  if (!empty($taxonomy_terms)) {
@@ -71,28 +81,28 @@
                 <div class="card__body">
                   <p class="card__info">全部コミコミ(お一人様)</p>
                   <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;56,000</div>
-                    <div class="card__price card__price--sm">&yen;46,000</div>
+                    <div class="card__price card__price--lg"><?php the_field('campaign_1'); ?></div>
+                    <div class="card__price card__price--sm"><?php the_field('campaign_2'); ?></div>
                   </div>
                   <div class="card__box u-desktop">
                     <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
                     <div class="card__contact">
-                      <time class="card__time" datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('Y.m.d'); ?></time>
+                      <time class="card__time">2023/6/1-9/30</time>
                       <p class="card__contact-text">ご予約・お問い合わせはコチラ</p>
                     </div>
                     <div class="card__btn">
                       <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
-                      </div>
+                    </div>
                   </div>
                 </div>
-                </div>
+              </div>
               </div>
             </li>
             <?php endwhile;
 				endif; ?>
+              <!-- ループ処理終了 -->
           </ul>
-          <!-- <p>記事が投稿されていません</p> -->
-            <div class="campaign-content__pagination pagination">
+          <div class="campaign-content__pagination pagination">
             <?php wp_pagenavi(); ?>
             </div>
         </div>
@@ -142,6 +152,9 @@
       </div>
     </section>
     <!-- contact -->
+
   </main>
+
+  <!-- main -->
 
 <?php get_footer(); ?>
