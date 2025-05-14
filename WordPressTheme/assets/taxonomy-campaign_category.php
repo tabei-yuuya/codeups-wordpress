@@ -49,8 +49,6 @@
         <div class="campaign-content__area">
           <ul class="campaign-content__items campaign-cards campaign-cards--grid">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <!-- <p><?php the_time( get_option( 'date_format' ) ); ?></p>
-          <p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p> -->
             <!-- ループ処理開始 -->
             <!-- 表示する中身（ここから） -->
             <li class="campaign-cards__item campaign-cards__item--campaign">

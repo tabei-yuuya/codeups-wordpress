@@ -30,7 +30,7 @@
       </div>
     <?php } ?>
 
-    <div class="voice-content voice-content-layout content-fish">
+    <section class="voice-content voice-content-layout content-fish">
       <div class="campaign-content__inner inner">
         <ol class="voice-content__tab tab">
           <li><a href="<?php echo get_post_type_archive_link('voice') ?>" class="tab__item active">all</a></li>
@@ -39,25 +39,19 @@
           <!-- 繰り返し処理 -->
           <?php foreach ($voice_terms as $voice_term) : ?>
           <li>
-            <a href="<?php echo get_term_link($voice_term, 'voice_category') ?>" class="tab__item">
-               <!-- ターム名 -->
-          <?php echo $voice_term->name; ?>
+          <a href="<?php echo get_term_link($voice_term, 'voice_category') ?>" class="tab__item <?php if (is_tax('voice_category', $voice_term->term_id)) echo 'active' ?>">
+            <?php echo $voice_term->name; ?>
+          </a>
           </a>
         </li>
         <?php endforeach; ?>
         </ol>
         <div class="voice-content__area">
-        <?php
-          $args = [
-              "post_type" => "voice",   //投稿タイプ//
-              "posts_per_page" => 6  //表示数//
-          ];
-          $the_query = new WP_Query($args);
-        ?>
-        <?php if ($the_query->have_posts()) :?>
         <div class="voice-content__tab-content">
           <ul class="voice-content__cards voice-cards">
-          <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
+          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+            <!-- ループ処理開始 -->
+            <!-- 表示する中身（ここから） -->
             <li class="voice-cards__card voice-card">
               <a class="voice-card__link" href="#">
                 <div class="voice-card__item">
@@ -87,7 +81,7 @@
                       </div>
                       <div class="voice-card__figure">
                         <div class="voice-card__img js-colorbox">
-                          <img src="<?php the_post_thumbnail_url(); ?>" alt="帽子を被った笑顔の女性">
+                          <img src="<?php the_post_thumbnail_url(); ?>"" alt="帽子を被った笑顔の女性">
                         </div>
                       </div>
                 </div>
@@ -109,7 +103,7 @@
         </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- campaign-page -->
 
     <!-- contact -->

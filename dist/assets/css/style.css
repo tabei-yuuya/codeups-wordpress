@@ -4142,6 +4142,7 @@ html {
 
 .modal__inner img {
 	aspect-ratio: 580/369;
+	width: 36.25rem;
 }
 
 .modal__inner.modal__inner--hight img {

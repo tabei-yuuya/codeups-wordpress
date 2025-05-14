@@ -79,8 +79,8 @@
                 <div class="card__body">
                   <p class="card__info">全部コミコミ(お一人様)</p>
                   <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;56,000</div>
-                    <div class="card__price card__price--sm">&yen;46,000</div>
+                    <div class="card__price card__price--lg"><?php the_field('campaign_1'); ?></div>
+                    <div class="card__price card__price--sm"><?php the_field('campaign_2'); ?></div>
                   </div>
                   <div class="card__box u-desktop">
                     <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
