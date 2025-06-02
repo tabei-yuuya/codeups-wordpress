@@ -3,6 +3,7 @@
 .pagination{
   display: flex;
   justify-content:space-between;
+  column-gap:rem(12.5) ;
   @include mq("md"){
     justify-content:center;
   }
@@ -17,7 +18,7 @@
   }
 }
 
-.page{
+.page-numbers{
   border: 1px solid $green;
   color: $green;
   background-color: $white;
@@ -47,8 +48,8 @@
   background-color: $green;
 }
 
-.previouspostslink,
-.nextpostslink{
+.prev,
+.next{
   border: 1px solid $green;
   color: $green;
   background-color: $white;
@@ -82,8 +83,8 @@
   transform: rotate(-45deg);
   transition: all 0.3s;
 }
-.previouspostslink::before,
-.nextpostslink::before{
+.prev::before,
+.next::before{
   content: "";
   border-top: 1px solid $green;
   border-left: 1px solid $green;
@@ -93,17 +94,17 @@
   transition: all 0.3s;
 }
 
-.previouspostslink::before{
+.prev::before{
   transform: rotate(-45deg);
 }
 
-.previouspostslink:hover,
+.prev:hover,
 .pagination__next:hover{
   background-color: $green;
 }
 
-.ppreviouspostslink:hover.previouspostslink::before,
-.nextpostslink:hover.nextpostslink::before{
+.prev:hover.prev::before,
+.next:hover.next::before{
   border-color: $white;
 }
 
@@ -115,5 +116,7 @@
     margin: rem(80) auto 0;
   }
 }
+
+
 
 

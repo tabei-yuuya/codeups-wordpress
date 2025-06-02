@@ -42,12 +42,19 @@
       </ol>
         <div class="campaign-content__area">
         <?php
-          $args = [
-              "post_type" => "campaign",   //投稿タイプ//
-              "posts_per_page" => 4  //表示数//
-          ];
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+          // スマホ判定（WP組み込み関数）
+          $per_page = wp_is_mobile() ? 4 : 6; // スマホは4件、それ以外は10件
+
+          $args = array(
+              'post_type' => 'campaign', // 投稿タイプを適宜変更
+              'posts_per_page' => 4,
+              'paged' => $paged
+          );
+
           $the_query = new WP_Query($args);
-        ?>
+          ?>
         <?php if ($the_query->have_posts()) : ?>
           <ul class="campaign-content__items campaign-cards campaign-cards--grid">
           <?php while ($the_query->have_posts()) : $the_query->the_post(); ?>
@@ -103,7 +110,19 @@
           <p>記事が投稿されていません</p>
         <?php endif; ?>
             <div class="campaign-content__pagination pagination">
-            <?php wp_pagenavi(); ?>
+            <?php
+          $big = 999999999; // unique number
+          echo paginate_links(array(
+              'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+              'format' => '?paged=%#%',
+              'current' => max(1, $paged),
+              'total' => $the_query->max_num_pages,
+              'mid_size'  => 3, // ← ここを小さくすると「...」が出やすくなる
+              'end_size'  => 1,
+              'prev_text' => '',
+              'next_text' => '',
+          ));
+          ?>
             </div>
         </div>
       </div>

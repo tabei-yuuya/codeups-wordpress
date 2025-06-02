@@ -4,7 +4,7 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="./assets/images/price-pc-mv.jpg" media="(min-width: 768px)" >
+      <source srcset="<?php echo get_theme_file_uri(); ?>//images/price-pc-mv.jpg" media="(min-width: 768px)" >
       <img src="./assets/images/price-sp-mv.jpg" alt="海面からダイバーの頭が見えている画像">
     </picture>
     </div>
@@ -22,120 +22,84 @@
 <!-- main -->
   <main>
     <!-- campaign-page -->
-    <div class="breadcrumb breadcrumb-layout">
-      <div class="breadcrumb__inner inner">
-        <a href="index.html" class="breadcrumb__link">top</a>
-        <span class="breadcrumb__arrow"></span>
-        <a href="#" class="breadcrumb__link">料金一覧</a>
+    <?php if (function_exists('bcn_display')) { ?>
+      <div class="breadcrumb breadcrumb-layout">
+        <div class="breadcrumb__inner inner">
+        <?php bcn_display(); ?>
+        </div>
       </div>
-    </div>
+    <?php } ?>
 
     <div class="price-content price-content-layout content-fish">
       <div class="price-content__inner inner">
         <div class="price-content__wrapper">
           <table id="plice1" class="price-content__list price-list">
-            <tr class="price-list__row">
-              <th class="price-list__head" rowspan="3">
-                <span>ライセンス講習</span>
-              </th>
-              <td class="price-list__course">
-                オープンウォーター<br class="u-mobile">ダイバーコース
-              </td>
-              <td class="price-list__value">&yen;50,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                アドバンスド<br class="u-mobile">オープンウォーターコース
-              </td>
-              <td class="price-list__value">&yen;60,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                レスキュー&plus;EFRコース
-              </td>
-              <td class="price-list__value">&yen;70,000</td>
-            </tr>
+          <?php
+            $courses = SCF::get('license_group');
+
+            foreach ($courses as $index => $course) :
+            ?>
+              <tr class="price-list__row">
+                <?php if ($index === 0): ?>
+                  <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
+                    <span>ライセンス講習</span>
+                  </th>
+                <?php endif; ?>
+                <td class="price-list__course"><?php echo $course['license_name']; ?></td>
+                <td class="price-list__value"><?php echo $course['license_price']; ?></td>
+              </tr>
+            <?php endforeach; ?>
           </table>
           <table id="plice2" class="price-content__list price-list">
-            <tr class="price-list__row">
-              <th class="price-list__head" rowspan="4">
-                <span>体験ダイビング</span>
-              </th>
-              <td class="price-list__course">
-                ビーチ体験ダイビング<br class="u-mobile">(半日)
-              </td>
-              <td class="price-list__value">&yen;7,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                ビーチ体験ダイビング<br class="u-mobile">(1日)
-              </td>
-              <td class="price-list__value">&yen;14,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                ボート体験ダイビング&plus;(半日)
-              </td>
-              <td class="price-list__value">&yen;10,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                ボート体験ダイビング&plus;(1日)
-              </td>
-              <td class="price-list__value">&yen;18,000</td>
-            </tr>
+          <?php
+            $courses = SCF::get('experience_group');
+
+            foreach ($courses as $index => $course) :
+            ?>
+              <tr class="price-list__row">
+                <?php if ($index === 0): ?>
+                  <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
+                    <span>体験ダイビング</span>
+                  </th>
+                <?php endif; ?>
+                <td class="price-list__course"><?php echo $course['experience_name']; ?></td>
+                <td class="price-list__value"><?php echo $course['experience_price']; ?></td>
+              </tr>
+            <?php endforeach; ?>
           </table>
           <table id="plice3" class="price-content__list price-list">
-            <tr class="price-list__row">
-              <th class="price-list__head" rowspan="4">
-                <span>ファンダイビング</span>
-              </th>
-              <td class="price-list__course">
-                ビーチダイビング<br class="u-mobile">(2ダイブ)
-              </td>
-              <td class="price-list__value">&yen;14,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                ボートダイビング<br class="u-mobile">(2ダイブ)
-              </td>
-              <td class="price-list__value">&yen;18,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                スペシャルダイビング&plus;(2ダイブ)
-              </td>
-              <td class="price-list__value">&yen;24,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                ナイトダイビング&plus;(1ダイブ)
-              </td>
-              <td class="price-list__value">&yen;10,000</td>
-            </tr>
+          <?php
+            $courses = SCF::get('fundiving_group');
+
+            foreach ($courses as $index => $course) :
+            ?>
+              <tr class="price-list__row">
+                <?php if ($index === 0): ?>
+                  <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
+                    <span>ファンダイビング</span>
+                  </th>
+                <?php endif; ?>
+                <td class="price-list__course"><?php echo $course['fundiving_name']; ?></td>
+                <td class="price-list__value"><?php echo $course['fundiving_price']; ?></td>
+              </tr>
+            <?php endforeach; ?>
           </table>
           <table id="plice4" class="price-content__list price-list">
-            <tr class="price-list__row">
-              <th class="price-list__head" rowspan="3">
-                <span>スペシャルダイビング</span>
-              </th>
-              <td class="price-list__course">
-                貸切ダイビング<br class="u-mobile">(2ダイブ)
-              </td>
-              <td class="price-list__value">&yen;24,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                1日ダイビング<br class="u-mobile">(3ダイブ)
-              </td>
-              <td class="price-list__value">&yen;32,000</td>
-            </tr>
-            <tr class="price-list__row">
-              <td class="price-list__course">
-                ナイトダイビング&plus;(2ダイブ)
-              </td>
-              <td class="price-list__value">&yen;14,000</td>
-            </tr>
+          <?php
+            $courses = SCF::get('special_group');
+
+            foreach ($courses as $index => $course) :
+            ?>
+              <tr class="price-list__row">
+                <?php if ($index === 0): ?>
+                  <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
+                    <span>スペシャルダイビング</span>
+                  </th>
+                <?php endif; ?>
+                <td class="price-list__course"><?php echo $course['special_name']; ?></td>
+                <td class="price-list__value"><?php echo $course['special_price']; ?></td>
+              </tr>
+            <?php endforeach; ?>
           </table>
         </div>
       </div>

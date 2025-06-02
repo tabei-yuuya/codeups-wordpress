@@ -16,3 +16,59 @@ function my_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 
+/* ---------- 「投稿」の表記変更 ---------- */
+function Change_menulabel() {
+    global $menu;
+    global $submenu;
+    $name = 'ブログ';
+    $menu[5][0] = $name;
+    $submenu['edit.php'][5][0] = $name.'一覧';
+    $submenu['edit.php'][10][0] = '新規'.$name.'投稿';
+  }
+  function Change_objectlabel() {
+    global $wp_post_types;
+    $name = 'ブログ';
+    $labels = &$wp_post_types['post']->labels;
+    $labels->name = $name;
+    $labels->singular_name = $name;
+    $labels->add_new = _x('追加', $name);
+    $labels->add_new_item = $name.'の新規追加';
+    $labels->edit_item = $name.'の編集';
+    $labels->new_item = '新規'.$name;
+    $labels->view_item = $name.'を表示';
+    $labels->search_items = $name.'を検索';
+    $labels->not_found = $name.'が見つかりませんでした';
+    $labels->not_found_in_trash = 'ゴミ箱に'.$name.'は見つかりませんでした';
+  }
+  add_action( 'init', 'Change_objectlabel' );
+  add_action( 'admin_menu', 'Change_menulabel' );
+
+  add_theme_support('post-thumbnails');
+
+// 記事のPVを取得
+function getPostViews($postID) {
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if ($count=='') {
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+    return "0 View";
+  }
+  return $count.' Views';
+}
+
+// 記事のPVをカウントする
+function setPostViews($postID) {
+  $count_key = 'post_views_count';
+  $count = get_post_meta($postID, $count_key, true);
+  if ($count=='') {
+    $count = 0;
+    delete_post_meta($postID, $count_key);
+    add_post_meta($postID, $count_key, '0');
+  } else {
+    $count++;
+    update_post_meta($postID, $count_key, $count);
+  }
+}
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+

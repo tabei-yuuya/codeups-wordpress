@@ -47,6 +47,20 @@
           <?php endforeach; ?>
         </ol>
         <div class="campaign-content__area">
+        <?php
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+          // スマホ判定（WP組み込み関数）
+          $per_page = wp_is_mobile() ? 4 : 6; // スマホは4件、それ以外は10件
+
+          $args = array(
+              'post_type' => 'campaign', // 投稿タイプを適宜変更
+              'posts_per_page' => 4,
+              'paged' => $paged
+          );
+
+          $the_query = new WP_Query($args);
+          ?>
           <ul class="campaign-content__items campaign-cards campaign-cards--grid">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
             <!-- ループ処理開始 -->
@@ -61,7 +75,7 @@
                 <?php
 								  $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
 								  if (!empty($taxonomy_terms)) {
-								  $limit = 5;
+								  $limit = 5;f
 								  $count = 0;
 								  foreach ($taxonomy_terms as $taxonomy_term) {
 								  if ($count < $limit) {
@@ -101,7 +115,19 @@
               <!-- ループ処理終了 -->
           </ul>
           <div class="campaign-content__pagination pagination">
-            <?php wp_pagenavi(); ?>
+          <?php
+          $big = 999999999; // unique number
+          echo paginate_links(array(
+              'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+              'format' => '?paged=%#%',
+              'current' => max(1, $paged),
+              'total' => $the_query->max_num_pages,
+              'mid_size'  => 3, // ← ここを小さくすると「...」が出やすくなる
+              'end_size'  => 1,
+              'prev_text' => '',
+              'next_text' => '',
+          ));
+          ?>
             </div>
         </div>
       </div>

@@ -48,12 +48,20 @@
         </ol>
         <div class="voice-content__area">
         <?php
-          $args = [
-              "post_type" => "voice",   //投稿タイプ//
-              "posts_per_page" => 6  //表示数//
-          ];
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+          // スマホ判定（WP組み込み関数）
+          $per_page = wp_is_mobile() ? 4 : 6; // スマホは4件、それ以外は10件
+
+          $args = array(
+              'post_type' => 'voice', // 投稿タイプを適宜変更
+              'posts_per_page' => 6,
+              'paged' => $paged
+          );
+
           $the_query = new WP_Query($args);
-        ?>
+          ?>
+
         <?php if ($the_query->have_posts()) :?>
         <div class="voice-content__tab-content">
           <ul class="voice-content__cards voice-cards">
@@ -83,19 +91,21 @@
                           ?>
                           </p>
                         </div>
-                        <p class="voice-card__title">ここにタイトルが入ります。ここにタイトル</p>
+                        <p class="voice-card__title"><?php the_title(); ?></p>
                       </div>
                       <div class="voice-card__figure">
                         <div class="voice-card__img js-colorbox">
-                          <img src="<?php the_post_thumbnail_url(); ?>" alt="帽子を被った笑顔の女性">
+                        <?php if(get_the_post_thumbnail()): ?>
+                          <img src="<?php the_post_thumbnail_url('full'); ?>" alt="帽子を被った笑顔の女性">
+                        <?php else : ?>
+                          <img src="<?php echo get_theme_file_uri();?>/assets/images/noimage.jpg" alt="noimage">
+                        <?php endif; ?>
                         </div>
                       </div>
                 </div>
 
                   <p class="voice-card__copy">
-                      ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                      <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                      <br>ここにテキストが入ります。ここにテキストが入ります。
+                  <?php the_content(); ?>
                     </p>
                 </div>
               </a>
@@ -106,6 +116,21 @@
           <?php else : ?>
           <p>記事が投稿されていません</p>
         <?php endif; ?>
+        <div class="voice-content__pagination pagination">
+        <?php
+          $big = 999999999; // unique number
+          echo paginate_links(array(
+              'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+              'format' => '?paged=%#%',
+              'current' => max(1, $paged),
+              'total' => $the_query->max_num_pages,
+              'mid_size'  => 3, // ← ここを小さくすると「...」が出やすくなる
+              'end_size'  => 1,
+              'prev_text' => '',
+              'next_text' => '',
+          ));
+          ?>
+    </div>
         </div>
         </div>
       </div>

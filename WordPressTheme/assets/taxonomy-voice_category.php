@@ -33,7 +33,7 @@
     <section class="voice-content voice-content-layout content-fish">
       <div class="campaign-content__inner inner">
         <ol class="voice-content__tab tab">
-          <li><a href="<?php echo get_post_type_archive_link('voice') ?>" class="tab__item active">all</a></li>
+          <li><a href="<?php echo get_post_type_archive_link('voice') ?>" class="tab__item <?php if (!is_tax('voice_category')) echo 'active'; ?>">all</a></li>
            <!-- ボイスカテゴリーの項目を取得 -->
           <?php $voice_terms = get_terms('voice_category', array('hide_empty' => false)) ?>
           <!-- 繰り返し処理 -->
@@ -47,6 +47,20 @@
         <?php endforeach; ?>
         </ol>
         <div class="voice-content__area">
+        <?php
+          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+
+          // スマホ判定（WP組み込み関数）
+          $per_page = wp_is_mobile() ? 4 : 6; // スマホは4件、それ以外は10件
+
+          $args = array(
+              'post_type' => 'voice', // 投稿タイプを適宜変更
+              'posts_per_page' => 6,
+              'paged' => $paged
+          );
+
+          $the_query = new WP_Query($args);
+          ?>
         <div class="voice-content__tab-content">
           <ul class="voice-content__cards voice-cards">
           <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
@@ -100,7 +114,20 @@
           <?php else : ?>
           <p>記事が投稿されていません</p>
         <?php endif; ?>
-        </div>
+            <div class="voice-content__pagination pagination">
+            <?php
+          $big = 999999999; // unique number
+          echo paginate_links(array(
+              'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+              'format' => '?paged=%#%',
+              'current' => max(1, $paged),
+              'total' => $the_query->max_num_pages,
+              'prev_text' => '',
+              'next_text' => '',
+          ));
+          ?>
+            </div>
+          </div>
         </div>
       </div>
     </section>

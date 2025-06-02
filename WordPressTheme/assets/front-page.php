@@ -634,45 +634,70 @@
           </div>
             <div class="price__content">
               <div class="price__lists">
-                <dl class="price__list">
-                  <dt class="price__list-title">ライセンス講習</dt>
-                  <dt class="price__term">オープンウォーターダイバーコース</dt>
-                  <dd class="price__description">&yen;50,000</dd>
-                  <dt class="price__term">アドバンスドオープンウォーターコース</dt>
-                  <dd class="price__description">&yen;60,000</dd>
-                  <dt class="price__term">レスキュー&plus;EFRコース</dt>
-                  <dd class="price__description">&yen;70,000</dd>
-                </dl>
-                <dl class="price__list">
-                  <dt class="price__list-title">体験ダイビング</dt>
-                  <dt class="price__term">ビーチ体験ダイビング(半日)</dt>
-                  <dd class="price__description">&yen;7,000</dd>
-                  <dt class="price__term">ビーチ体験ダイビング(1日)</dt>
-                  <dd class="price__description">&yen;14,000</dd>
-                  <dt class="price__term">ボート体験ダイビング(半日)</dt>
-                  <dd class="price__description">&yen;10,000</dd>
-                  <dt class="price__term">ボート体験ダイビング(1日)</dt>
-                  <dd class="price__description">&yen;18,000</dd>
-                </dl>
-                <dl class="price__list">
-                  <dt class="price__list-title">ファンダイビング</dt>
-                  <dt class="price__term">ビーチダイビング(2ダイブ)</dt>
-                  <dd class="price__description">&yen;14,000</dd>
-                  <dt class="price__term">ボートダイビング(2ダイブ)</dt>
-                  <dd class="price__description">&yen;18,000</dd>
-                  <dt class="price__term">スペシャルダイビング(2ダイブ)</dt>
-                  <dd class="price__description">&yen;24,000</dd>
-                  <dt class="price__term">ナイトダイビング(1ダイブ)</dt>
-                  <dd class="price__description">&yen;10,000</dd>
-                </dl>
-                <dl class="price__list">
-                  <dt class="price__list-title">スペシャルダイビング</dt>
-                  <dt class="price__term">貸切ダイビング(2ダイブ)</dt>
-                  <dd class="price__description">&yen;24,000</dd>
-                  <dt class="price__term">1日ダイビング(3ダイブ)</dt>
-                  <dd class="price__description">&yen;32,000</dd>
-                </dl>
+              <?php
+                $price_page_id = 22;
+                $courses = SCF::get('license_group', $price_page_id);
 
+                if (!empty($courses)) :
+                ?>
+                <dl class="price__list">
+                <?php foreach ($courses as $index => $course) : ?>
+                  <?php if ($index === 0): ?>
+                  <dt class="price__list-title">ライセンス講習</dt>
+                  <?php endif; ?>
+                  <dt class="price__term"><?php echo $course['license_name']; ?></dt>
+                  <dd class="price__description"><?php echo $course['license_price']; ?></dd>
+                  <?php endforeach; ?>
+                </dl>
+                <?php endif; ?>
+                <?php
+                $price_page_id = 22;
+                $courses = SCF::get('experience_group', $price_page_id);
+
+                if (!empty($courses)) :
+                ?>
+                <dl class="price__list">
+                <?php foreach ($courses as $index => $course) : ?>
+                  <?php if ($index === 0): ?>
+                  <dt class="price__list-title">体験ダイビング</dt>
+                  <?php endif; ?>
+                  <dt class="price__term"><?php echo $course['experience_name']; ?></dt>
+                  <dd class="price__description"><?php echo $course['experience_price']; ?></dd>
+                  <?php endforeach; ?>
+                </dl>
+                <?php endif; ?>
+                <?php
+                $price_page_id = 22;
+                $courses = SCF::get('fundiving_group', $price_page_id);
+
+                if (!empty($courses)) :
+                ?>
+                <dl class="price__list">
+                <?php foreach ($courses as $index => $course) : ?>
+                  <?php if ($index === 0): ?>
+                  <dt class="price__list-title">体験ダイビング</dt>
+                  <?php endif; ?>
+                  <dt class="price__term"><?php echo $course['fundiving_name']; ?></dt>
+                  <dd class="price__description"><?php echo $course['fundiving_price']; ?></dd>
+                  <?php endforeach; ?>
+                </dl>
+                <?php endif; ?>
+                <?php
+                $price_page_id = 22;
+                $courses = SCF::get('special_group', $price_page_id);
+
+                if (!empty($courses)) :
+                ?>
+                <dl class="price__list">
+                <?php foreach ($courses as $index => $course) : ?>
+                  <?php if ($index === 0): ?>
+                  <dt class="price__list-title">スペシャルダイビング</dt>
+                  <?php endif; ?>
+                  <dt class="price__term"><?php echo $course['special_name']; ?></dt>
+                  <dd class="price__description"><?php echo $course['special_price']; ?></dd>
+                  <?php endforeach; ?>
+                </dl>
+                <?php endif; ?>
               </div>
 
               <div class="price__img2 js-colorbox u-desktop">

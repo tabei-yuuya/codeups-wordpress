@@ -17,12 +17,14 @@
     font-size: rem(33);
   }
 }
-.blog-detail__img{
+.blog-detail img{
   width: 100%;
+  height: 100%;
   aspect-ratio: 345 / 231;
   object-fit: cover;
   margin-top: rem(24);
   @include mq("md"){
+    aspect-ratio: 702 / 468;
     margin-top: rem(35);
   }
 }
@@ -39,7 +41,13 @@
   object-fit: cover;
   margin-top: rem(24);
   @include mq("md"){
+  aspect-ratio: 702 / 468;
     margin-top: rem(35);
+  }
+}
+.blog-detail figure img{
+  width: 100%;
+  @include mq("md"){
   }
 }
 

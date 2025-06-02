@@ -29,3 +29,8 @@
   color: $white;border-right: rem(1) solid $white;
   border-top: rem(1) solid $white;
 }
+
+// 投稿詳細ページ
+.breadcrumb__inner .breadcrumb__inner--single span:nth-of-type(3){
+  display: none;
+}

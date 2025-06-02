@@ -63,7 +63,7 @@
             </a>
           </li>
           <li class="header__list">
-            <a href="<?php echo get_post_type_archive_link('home'); ?>" class="header__link">
+            <a href="<?php echo get_permalink( get_page_by_path('blog') ); ?>" class="header__link">
               <p class="header__text">Blog</p>
               <p class="header__text header__text--sub">ブログ</p>
             </a>
