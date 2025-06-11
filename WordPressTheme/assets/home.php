@@ -4,7 +4,7 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="./assets/images/blog-pc-mv.jpg" media="(min-width: 768px)" >
+      <source srcset="<?php echo get_theme_file_uri(); ?>//images/blog-pc-mv.jpg" media="(min-width: 768px)" >
       <img src="<?php echo get_theme_file_uri(); ?>//images/blog-sp-mv.jpg" alt="魚の大群の画像">
     </picture>
     </div>

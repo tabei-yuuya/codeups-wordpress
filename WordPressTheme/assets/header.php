@@ -38,7 +38,7 @@
     <div class="header__inner">
       <div class="header__title">
         <a href="<?php echo home_url(); ?>" class="header__link-title">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/CodeUpscodeups.svg" alt="CodeUps">
+          <img src="<?php echo get_theme_file_uri(); ?>/images/CodeUps.svg" alt="CodeUps">
         </a>
     </div>
 

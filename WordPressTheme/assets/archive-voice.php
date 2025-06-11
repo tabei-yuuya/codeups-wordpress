@@ -78,11 +78,11 @@
                             $taxonomy_terms = get_the_terms($post->ID, 'voice_category');
                             if (!empty($taxonomy_terms)) {
                             $limit = 5;
-                            $count = 0;
+                            $voice_count = 0;
                             foreach ($taxonomy_terms as $taxonomy_term) {
-                            if ($count < $limit) {
+                            if ($voice_count < $limit) {
                             echo '<span>' . esc_html($taxonomy_term->name) . '</span>';
-                              $count++;
+                              $voice_count++;
                               } else {
                               break;
                                 }

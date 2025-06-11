@@ -2,7 +2,7 @@
     <div class="footer__inner inner">
       <div class="footer__head">
         <div class="footer__img">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/CodeUpscodeups.svg" alt="CodeUps">
+          <img src="<?php echo get_theme_file_uri(); ?>/images/CodeUps.svg" alt="CodeUps">
         </div>
         <div class="footer__icon">
           <div class="footer__facebook">

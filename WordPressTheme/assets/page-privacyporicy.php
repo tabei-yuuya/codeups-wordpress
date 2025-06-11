@@ -4,13 +4,12 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>//images/faq-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>//images/faq-sp-mv.jpg" alt="エメラルドグリーンの海と
-      白い砂浜の画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/sitemap-pc-mv.jpg" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/sitemap-sp-mv.jpg" alt="珊瑚礁の周りをカラフルな魚たちが泳いでいる画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
-      <h1 class=" mv-underlayer__main">FAQ</h1>
+      <h1 class=" mv-underlayer__main">Privacy Policy</h1>
     </div>
   </div>
 <!-- main visual -->
@@ -22,58 +21,33 @@
 
 <!-- main -->
   <main>
-    <!-- faq-page -->
-   <?php if (function_exists('bcn_display')) { ?>
-      <div class="breadcrumb breadcrumb-layout">
-        <div class="breadcrumb__inner inner">
-        <?php bcn_display(); ?>
-        </div>
+    <!-- policy-page -->
+    <div class="breadcrumb breadcrumb-layout">
+      <div class="breadcrumb__inner inner">
+        <a href="index.html" class="breadcrumb__link">top</a>
+        <span class="breadcrumb__arrow"></span>
+        <a href="#" class="breadcrumb__link">プライバシーポリシー</a>
       </div>
-    <?php } ?>
+    </div>
 
-    <section class="faq-content faq-content-layout content-fish">
-      <div class="faq-content__inner inner">
-        <div class="faq-content__accordion faq-accordion js-faq-accordion">
-          <div class="faq-accordion__container">
-            <?php
-              $courses = SCF::get('faq-group');
-
-              $valid_courses = [];
-
-              // 中身がある行だけフィルタリング（すべて空行は除外）
-              foreach ($courses as $course) {
-                  if (!empty($course['faq_questions']) || !empty($course['faq_answer'])) {
-                      $valid_courses[] = $course;
-                  }
-              }
-
-              if (!empty($valid_courses)) :
-              ?>
-            <div class="faq-accordion__item js-faq-accordion__item">
-            <?php foreach ($valid_courses as $course): ?>
-              <div class="faq-accordion__title js-faq-accordion__title is-open">
-                <?php echo esc_html($course['faq_questions']); ?>
-              </div>
-              <div class="faq-accordion__content js-faq-accordion__content is-open">
-                <p class="faq-accordion__text"><?php echo esc_html($course['faq_answer']); ?></p>
-              </div>
-              <?php endforeach; ?>
-            </div>
-          <?php endif; ?>
-        </div>
+    <section class="policy-content policy-content-layout content-fish">
+      <div class="policy-content__inner inner">
+        <div class="policy-content__wrapper">
+          <div class="policy-content__items">
+            <?php the_content(); ?>
+          </div>
         </div>
       </div>
     </section>
-    <!-- faq-page -->
+    <!-- policy-page -->
 
     <!-- contact -->
     <section id="contact" class="contact contact-layout contact-fish">
       <div class="contact__inner inner">
-
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">
@@ -99,7 +73,7 @@
               </p>
 
               <div class="contact__btn">
-                <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
+                <a href="sitemap.html" class="btn">Contact us<span class="btn__arrow"></span></a>
               </div>
           </div>
 
@@ -108,7 +82,6 @@
       </div>
     </section>
     <!-- contact -->
-
   </main>
 
   <!-- main -->

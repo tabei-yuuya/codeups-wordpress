@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="./assets/images/info-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="./assets/images/info-sp-mv.jpg" alt="ダイバーが珊瑚礁の横を泳いでいる画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/info-pc-mv.jpg" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/info-sp-mv.jpg" alt="ダイバーが珊瑚礁の横を泳いでいる画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -22,13 +22,13 @@
 <!-- main -->
   <main>
     <!-- about-content -->
-    <div class="breadcrumb breadcrumb-layout">
-      <div class="breadcrumb__inner inner">
-        <a href="index.html" class="breadcrumb__link">top</a>
-        <span class="breadcrumb__arrow"></span>
-        <a href="#" class="breadcrumb__link">ダイビング情報</a>
+     <?php if (function_exists('bcn_display')) { ?>
+      <div class="breadcrumb breadcrumb-layout">
+        <div class="breadcrumb__inner inner">
+        <?php bcn_display(); ?>
+        </div>
       </div>
-    </div>
+    <?php } ?>
 
     <section class="info-content info-content-layout content-fish">
       <div class="info-content__inner inner">
@@ -52,7 +52,7 @@
               <p class="info-card__text">泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします&#33;スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう&#33;</p>
             </div>
             <figure class="info-card__img">
-              <img src="./assets/images/info-license.jpg" alt="5人のダイバーが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-license.jpg" alt="5人のダイバーが泳いでいる画像">
             </figure>
           </div>
         </div>
@@ -64,7 +64,7 @@
               <p class="info-card__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意&#33;</p>
             </div>
             <figure class="info-card__img">
-              <img src="./assets/images/info-fundiving.jpg" alt="珊瑚礁の周りを魚の群れが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-fundiving.jpg" alt="珊瑚礁の周りを魚の群れが泳いでいる画像">
             </figure>
           </div>
         </div>
@@ -76,7 +76,7 @@
               <p class="info-card__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意&#33;</p>
             </div>
             <figure class="info-card__img">
-              <img src="./assets/images/info-experience.jpg" alt="5人のダイバーが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-experience.jpg" alt="5人のダイバーが泳いでいる画像">
             </figure>
           </div>
         </div>

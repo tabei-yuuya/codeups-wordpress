@@ -3,8 +3,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="./assets/images/campaign-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="./assets/images/campaign-sp-mv.jpg" alt="2匹の魚が泳いでいる様子">
+      <source srcset="<?php echo get_theme_file_uri(); ?>//images/campaign-pc-mv.jpg" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>//images/campaign-sp-mv.jpg" alt="2匹の魚が泳いでいる様子">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -69,11 +69,11 @@
 								  $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
 								  if (!empty($taxonomy_terms)) {
 								  $limit = 5;
-								  $count = 0;
+								  $campaign_count = 0;
 								  foreach ($taxonomy_terms as $taxonomy_term) {
-								  if ($count < $limit) {
+								  if ($campaign_count < $limit) {
 								   echo '<span class="card__label">' . esc_html($taxonomy_term->name) . '</span>';
-								    $count++;
+								    $campaign_count++;
 								     } else {
 								    break;
 								      }

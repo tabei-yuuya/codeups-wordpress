@@ -75,12 +75,12 @@
                 <?php
 								  $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
 								  if (!empty($taxonomy_terms)) {
-								  $limit = 5;f
-								  $count = 0;
+								  $limit = 5;
+								  $campaign_type_count = 0;
 								  foreach ($taxonomy_terms as $taxonomy_term) {
-								  if ($count < $limit) {
+								  if ($campaign_type_count < $limit) {
 								   echo '<span class="card__label">' . esc_html($taxonomy_term->name) . '</span>';
-								    $count++;
+								    $campaign_type_count++;
 								     } else {
 								    break;
 								      }

@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="./assets/images/contact-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="./assets/images/contact-sp-mv.jpg" alt="エメラルドグリーンの海と
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/contact-pc-mv.jpg" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/contact-sp-mv.jpg" alt="エメラルドグリーンの海と
       白い砂浜の画像">
     </picture>
     </div>
@@ -23,15 +23,13 @@
 <!-- main -->
   <main>
     <!-- thanks-page -->
-    <div class="breadcrumb breadcrumb-layout">
-      <div class="breadcrumb__inner inner">
-        <a href="index.html" class="breadcrumb__link">top</a>
-        <span class="breadcrumb__arrow"></span>
-        <a href="#" class="breadcrumb__link">お問い合わせ</a>
-        <span class="breadcrumb__arrow"></span>
-        <a href="#" class="breadcrumb__link">送信完了</a>
+   <?php if (function_exists('bcn_display')) { ?>
+      <div class="breadcrumb breadcrumb-layout">
+        <div class="breadcrumb__inner inner">
+        <?php bcn_display(); ?>
+        </div>
       </div>
-    </div>
+    <?php } ?>
     <div class="thanks-content thanks-content-layout content-fish">
       <div class="thanks-content__inner inner">
         <div class="thanks-content__wrapper">

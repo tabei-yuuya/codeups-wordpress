@@ -72,3 +72,58 @@ function setPostViews($postID) {
 }
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 
+// コンタクトフォーム
+add_action('wpcf7_init', 'add_unique_campaign_select');
+
+function add_unique_campaign_select() {
+  wpcf7_add_form_tag('unique_campaign_select', 'render_unique_campaign_select');
+}
+
+function render_unique_campaign_select($tag) {
+  $tag = new WPCF7_FormTag($tag);
+
+  $terms = get_terms([
+    'taxonomy' => 'campaign_category', // タクソノミー名
+    'hide_empty' => true,
+  ]);
+
+  $html = '<select name="' . $tag->name . '">';
+  $html .= '<option value="">選択してください</option>';
+
+  foreach ($terms as $term) {
+    $posts = get_posts([
+      'post_type' => 'campaign',
+      'posts_per_page' => 1,
+      'tax_query' => [
+        [
+          'taxonomy' => 'campaign_category',
+          'field' => 'term_id',
+          'terms' => $term->term_id,
+        ]
+      ]
+    ]);
+
+    if (!empty($posts)) {
+      $title = esc_html($posts[0]->post_title);
+      $html .= "<option value=\"{$title}\">{$title}</option>";
+    }
+  }
+
+  $html .= '</select>';
+
+  return $html;
+}
+
+
+
+
+/**
+ * CF7 自動成型機能を無効にする
+ */
+function wpcf7_autop_return_false()
+{
+	return false;
+}
+add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
+
+

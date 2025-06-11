@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="./assets/images/sitemap-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="./assets/images/sitemap-sp-mv.jpg" alt="珊瑚礁の周りをカラフルな魚たちが泳いでいる画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/sitemap-pc-mv.jpg" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/sitemap-sp-mv.jpg" alt="">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -22,13 +22,13 @@
 <!-- main -->
   <main>
     <!-- sitemap-page -->
-    <div class="breadcrumb breadcrumb-layout">
-      <div class="breadcrumb__inner inner">
-        <a href="index.html" class="breadcrumb__link">top</a>
-        <span class="breadcrumb__arrow"></span>
-        <a href="#" class="breadcrumb__link">サイトマップ</a>
+    <?php if (function_exists('bcn_display')) { ?>
+      <div class="breadcrumb breadcrumb-layout">
+        <div class="breadcrumb__inner inner">
+        <?php bcn_display(); ?>
+        </div>
       </div>
-    </div>
+    <?php } ?>
 
     <div class="sitemap-content sitemap-content-layout">
       <div class="sitemap-content__inner inner">
@@ -38,9 +38,9 @@
               <ul class="sitemap-content__item">
                 <li class="sitemap-content__term">
                   <div class="sitemap-content__img2">
-                    <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode-map.svg" alt="ヒトデの画像">
                   </div>
-                <a href="#" class="sitemap-content__link">キャンペーン</a>
+                <a href="<?php echo get_post_type_archive_link('campaign'); ?>" class="sitemap-content__link">キャンペーン</a>
                 </li>
                 <li class="sitemap-content__description"><a href="#" class="sitemap-content__link">ライセンス取得</a></li>
                 <li class="sitemap-content__description"><a href="#" class="sitemap-content__link">貸切体験ダイビング</a></li>
@@ -49,9 +49,9 @@
             <ul class="sitemap-content__item">
               <li class="sitemap-content__term">
                 <div class="sitemap-content__img2">
-                  <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode-map.svg" alt="ヒトデの画像">
                 </div>
-                <a href="#" class="sitemap-content__link">私たちについて</a>
+                <a href="<?php echo get_permalink( get_page_by_path('about-us') ); ?>" class="sitemap-content__link">私たちについて</a>
               </li>
             </ul>
   
@@ -61,9 +61,9 @@
             <ul class="sitemap-content__item">
               <li class="sitemap-content__term">
                 <div class="sitemap-content__img2">
-                  <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode-map.svg" alt="ヒトデの画像">
                 </div>
-                <a href="#" class="sitemap-content__link">ダイビング情報</a>
+                <a href="<?php echo get_permalink( get_page_by_path('information') ); ?>" class="sitemap-content__link">ダイビング情報</a>
               </li>
               <li class="sitemap-content__description"><a href="#" class="sitemap-content__link">ライセンス講習</a></li>
               <li class="sitemap-content__description"><a href="#" class="sitemap-content__link">体験ダイビング</a></li>
@@ -72,9 +72,9 @@
             <ul class="sitemap-content__item">
               <li class="sitemap-content__term">
                 <div class="sitemap-content__img2">
-                  <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                  <img src="<?php echo get_theme_file_uri(); ?>//images/hitode-map.svg" alt="ヒトデの画像">
                 </div>
-                <a href="#" class="sitemap-content__link">ブログ</a>
+                <a href="<?php echo get_permalink( get_page_by_path('blog') ); ?>" class="sitemap-content__link">ブログ</a>
               </li>
             </ul>
             </div>
@@ -82,18 +82,18 @@
                 <ul class="sitemap-content__item">
                   <li class="sitemap-content__term">
                     <div class="sitemap-content__img2">
-                      <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode-map.svg" alt="ヒトデの画像">
                     </div>
-                  <a href="#" class="sitemap-content__link">お客様の声</a>
+                  <a href="<?php echo get_post_type_archive_link('voice'); ?>" class="sitemap-content__link">お客様の声</a>
                   </li>
                 </ul>
   
                 <ul class="sitemap-content__item">
                   <li class="sitemap-content__term">
                     <div class="sitemap-content__img2">
-                      <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode-map.svg" alt="ヒトデの画像">
                     </div>
-                    <a href="#" class="sitemap-content__link">料金一覧</a>
+                    <a href="<?php echo get_permalink( get_page_by_path('price') ); ?>" class="sitemap-content__link">料金一覧</a>
                   </li>
                   <li class="sitemap-content__description"><a href="#" class="sitemap-content__link">ライセンス講習</a></li>
                   <li class="sitemap-content__description"><a href="#" class="sitemap-content__link">体験ダイビング</a></li>
@@ -104,36 +104,36 @@
               <ul class="sitemap-content__item">
                 <li class="sitemap-content__term">
                   <div class="sitemap-content__img2">
-                    <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                    <img src="<?php echo get_theme_file_uri(); ?>//images/hitode-map.svg" alt="ヒトデの画像">
                   </div>
-                  <a href="#" class="sitemap-content__link">よくある質問</a>
+                  <a href="<?php echo get_permalink( get_page_by_path('faq') ); ?>" class="sitemap-content__link">よくある質問</a>
                 </li>
               </ul>
   
               <ul class="sitemap-content__item">
                 <li class="sitemap-content__term">
                     <div class="sitemap-content__img2">
-                      <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                      <img src="<?php echo get_theme_file_uri(); ?>//images/hitode-map.svg" alt="ヒトデの画像">
                     </div>
-                  <a href="#" class="sitemap-content__link">プライバシー<br class="u-mobile">ポリシー</a>
+                  <a href="<?php echo get_permalink( get_page_by_path('privacyporicy') ); ?>" class="sitemap-content__link">プライバシー<br class="u-mobile">ポリシー</a>
                 </li>
               </ul>
   
               <ul class="sitemap-content__item">
                 <li class="sitemap-content__term">
                     <div class="sitemap-content__img2">
-                      <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                      <img src="<?php echo get_theme_file_uri(); ?>//images/hitode-map.svg" alt="ヒトデの画像">
                     </div>
-                    <a href="#" class="sitemap-content__link">利用規約</a>
+                    <a href="<?php echo get_permalink( get_page_by_path('terms-of-service') ); ?>" class="sitemap-content__link">利用規約</a>
                 </li>
               </ul>
   
               <ul class="sitemap-content__item">
                 <li class="sitemap-content__term">
                   <div class="sitemap-content__img2">
-                    <img src="./assets/images/hitode-map.svg" alt="ヒトデの画像">
+                    <img src="<?php echo get_theme_file_uri(); ?>//images/hitode-map.svg" alt="ヒトデの画像">
                   </div>
-                  <a href="#" class="sitemap-content__link">お問い合わせ</a>
+                  <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="sitemap-content__link">お問い合わせ</a>
                 </li>
               </ul>
             </div>
@@ -141,7 +141,7 @@
         </div>
       </div>
       <div class="sitemap-content__img u-mobile">
-        <img src="./assets/images/voice-habadai.png" alt="右に向かって泳ぐ6匹のキンギョハナダイのイラスト">
+        <img src="<?php echo get_theme_file_uri(); ?>//images/voice-habadai.png" alt="右に向かって泳ぐ6匹のキンギョハナダイのイラスト">
       </div>
     </div>
     <!-- sitemap-page -->
