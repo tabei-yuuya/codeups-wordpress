@@ -32,23 +32,23 @@
     <?php } ?>
     <div class="contact-content contact-content-layout content-fish">
       <div class="contact-content__inner inner">
-        	<?php echo do_shortcode('[contact-form-7 id="ec7633a" title="お問い合わせ"]'); ?>
+        	<?php echo do_shortcode('[contact-form-7 id="c35c4e9" title="お問い合わせフォーム"]'); ?>
+          
       </div>
     </div>
 
 
 
-<!-- <script>
-  document.addEventListener('wpcf7mailsent', function(event) {
-    window.location.href = '<?php echo esc_url( get_permalink( get_page_by_path('thanks') ) ); ?>';
-  }, false);
-</script> -->
+
+
 
 
     
     <!-- contact-page -->
 
+    
   </main>
 
+  
   <!-- main -->
 <?php get_footer(); ?>

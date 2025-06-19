@@ -135,17 +135,30 @@ add_action('phpmailer_init', function($phpmailer) {
 });
 
 
-// function cf7_redirect_to_thanks() {
-//   if ( is_page('contact') ) { // contactページだけで実行
-//     ?>
-//     <script>
-//       document.addEventListener('wpcf7mailsent', function(event) {
-//         window.location.href = '<?php echo esc_url( get_permalink( get_page_by_path('thanks') ) ); ?>';
-//       }, false);
-//     </script>
-//     <?php
-//   }
-// }
-// add_action('wp_footer', 'cf7_redirect_to_thanks');
+function add_cf7_thanks_redirect_script() {
+  if (is_page('contact')) { // フォームがあるページのスラッグ
+    ?>
+    <script>
+      document.addEventListener('wpcf7mailsent', function(event) {
+        location.href = '<?php echo esc_url( get_permalink( get_page_by_path('thanks') ) ); ?>';
+      }, false);
+    </script>
+    <?php
+  }
+}
+add_action('wp_footer', 'add_cf7_thanks_redirect_script');
+
+
+// リダイレクト
+function my_custom_wpcf7_redirect( $form_tag ) {
+  ?>
+  <script>
+    document.addEventListener( 'wpcf7mailsent', function( event ) {
+      window.location.href = '<?php echo esc_url( home_url( '/contact/thanks/' ) ); ?>';
+    }, false );
+  </script>
+  <?php
+}
+add_action( 'wp_footer', 'my_custom_wpcf7_redirect' );
 
 

@@ -212,5 +212,3 @@ $(function () {
     $(this).next().slideToggle(300);
   });
 });
-
-// サンクスページへリダイレクト

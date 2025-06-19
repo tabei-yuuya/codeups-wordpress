@@ -125,7 +125,9 @@
     <p class="footer__copyright">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</p>
   </footer>
   <!-- footer -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+   <script type="text/javascript">wpcf7.cached = 0; </script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<?php wp_footer(); ?>
 </body>
 
 </html>

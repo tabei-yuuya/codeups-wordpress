@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -96,3 +97,115 @@
       </nav>
     </div>
   </header>
+
+      <div class="hamburger u-mobile js-hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <div class="drawer-menu js-drawer">
+      <div class="drawer-menu__inner inner">
+        <div class="drawer-menu__menu">
+          <div class="drawer-menu__container">
+            <div class="drawer-menu__items-1">
+              <ul class="drawer-menu__item">
+                <li class="drawer-menu__term">
+                  <div class="drawer-menu__img2">
+                    <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                  </div>
+                <a href="campaign.html" class="drawer-menu__link">キャンペーン</a>
+                </li>
+                <li class="drawer-menu__description"><a href="./campaign.html#tab__menu-2" class="drawer-menu__link">ライセンス取得</a></li>
+                <li class="drawer-menu__description"><a href="./campaign.html#tab__menu-3" class="drawer-menu__link">貸切体験ダイビング</a></li>
+                <li class="drawer-menu__description"><a href="./campaign.html#tab__menu-4" class="drawer-menu__link">ナイトダイビング</a></li>
+              </ul>
+            <ul class="drawer-menu__item">
+              <li class="drawer-menu__term">
+                <div class="drawer-menu__img2">
+                  <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                </div>
+                <a href="about.html" class="drawer-menu__link">私たちについて</a>
+              </li>
+            </ul>
+            </div>
+            <div class="drawer-menu__items-2">
+            <ul class="drawer-menu__item">
+              <li class="drawer-menu__term">
+                <div class="drawer-menu__img2">
+                  <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                </div>
+                <a href="infomation.html" class="drawer-menu__link">ダイビング情報</a>
+              </li>
+              <li class="drawer-menu__description"><a href="./infomation.html#tab__menu-1" class="drawer-menu__link">ライセンス講習</a></li>
+              <li class="drawer-menu__description"><a href="./infomation.html#tab__menu-3" class="drawer-menu__link">体験ダイビング</a></li>
+              <li class="drawer-menu__description"><a href="./infomation.html#tab__menu-2" class="drawer-menu__link">ファンダイビング</a></li>
+            </ul>
+            <ul class="drawer-menu__item">
+              <li class="drawer-menu__term">
+                <div class="drawer-menu__img2">
+                  <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                </div>
+                <a href="./blog.html" class="footer__link">ブログ</a>
+              </li>
+            </ul>
+            </div>
+            <div class="drawer-menu__items-3">
+                <ul class="drawer-menu__item">
+                  <li class="drawer-menu__term">
+                    <div class="drawer-menu__img2">
+                      <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                    </div>
+                  <a href="./voice.html" class="drawer-menu__link">お客様の声</a>
+                  </li>
+                </ul>
+                <ul class="drawer-menu__item">
+                  <li class="drawer-menu__term">
+                    <div class="drawer-menu__img2">
+                      <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                    </div>
+                    <a href="./price.html" class="drawer-menu__link">料金一覧</a>
+                  </li>
+                  <li class="drawer-menu__description"><a href="./price.html#plice1" class="drawer-menu__link">ライセンス講習</a></li>
+                  <li class="drawer-menu__description"><a href="./price.html#plice2" class="drawer-menu__link">体験ダイビング</a></li>
+                  <li class="drawer-menu__description"><a href="./price.html#plice3" class="drawer-menu__link">ファンダイビング</a></li>
+                </ul>
+            </div>
+            <div class="drawer-menu__items-4">
+              <ul class="drawer-menu__item">
+                <li class="drawer-menu__term">
+                  <div class="drawer-menu__img2">
+                    <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                  </div>
+                  <a href="./faq.html" class="drawer-menu__link">よくある質問</a>
+                </li>
+              </ul>
+              <ul class="drawer-menu__item">
+                <li class="drawer-menu__term">
+                    <div class="drawer-menu__img2">
+                      <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                    </div>
+                  <a href="policy.html" class="drawer-menu__link">プライバシー<br class="u-mobile">ポリシー</a>
+                </li>
+              </ul>
+              <ul class="drawer-menu__item">
+                <li class="drawer-menu__term">
+                    <div class="footer__img2">
+                      <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                    </div>
+                    <a href="terms.html" class="drawer-menu__link">利用規約</a>
+                </li>
+              </ul>
+              <ul class="drawer-menu__item">
+                <li class="drawer-menu__term">
+                  <div class="drawer-menu__img2">
+                    <img src="./assets/images/hitode.svg" alt="ヒトデの画像">
+                  </div>
+                  <a href="./contact.html" class="drawer-menu__link">お問い合わせ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
