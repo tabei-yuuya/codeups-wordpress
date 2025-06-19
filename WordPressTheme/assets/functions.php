@@ -127,3 +127,11 @@ function wpcf7_autop_return_false()
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
 
 
+add_action('phpmailer_init', function($phpmailer) {
+  $phpmailer->isSMTP();
+  $phpmailer->Host = '127.0.0.1';
+  $phpmailer->Port = 1025;
+  $phpmailer->SMTPAuth = false;
+});
+
+
