@@ -38,6 +38,11 @@
 
 
 
+<!-- <script>
+  document.addEventListener('wpcf7mailsent', function(event) {
+    window.location.href = '<?php echo esc_url( get_permalink( get_page_by_path('thanks') ) ); ?>';
+  }, false);
+</script> -->
 
 
     

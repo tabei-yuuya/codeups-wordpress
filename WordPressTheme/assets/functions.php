@@ -135,3 +135,17 @@ add_action('phpmailer_init', function($phpmailer) {
 });
 
 
+// function cf7_redirect_to_thanks() {
+//   if ( is_page('contact') ) { // contactページだけで実行
+//     ?>
+//     <script>
+//       document.addEventListener('wpcf7mailsent', function(event) {
+//         window.location.href = '<?php echo esc_url( get_permalink( get_page_by_path('thanks') ) ); ?>';
+//       }, false);
+//     </script>
+//     <?php
+//   }
+// }
+// add_action('wp_footer', 'cf7_redirect_to_thanks');
+
+
