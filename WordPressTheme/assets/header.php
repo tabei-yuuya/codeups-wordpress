@@ -33,8 +33,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="<?php echo get_theme_file_uri(); ?>/js/jquery.inview.min.js"></script>
   <script defer src="<?php echo get_theme_file_uri(); ?>/js/script.js"></script>
+  <?php wp_head() ?>
 </head>
-<body>
+<body <?php body_class(); ?>>
   <header id="header" class="header">
     <div class="header__inner">
       <div class="header__title">

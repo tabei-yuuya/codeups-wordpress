@@ -21,3 +21,39 @@ position: relative;
     top: rem(-70);
     }
 }
+
+.contact-content__error .contact-form__input,
+.contact-content__error .contact-form__textarea
+{
+   border: rem(1) solid $red;
+   background-color: rgba(201,72,0,20%) ;
+}
+
+.contact-content__error .contact-form__input input::placeholder{
+  color: $white;
+}
+
+
+
+
+.contact-content__text{
+  font-size: rem(14);
+  color:#C94800;
+  font-family: $third-font-family;
+  display: block;
+  width: rem(245);
+  max-width: 100%;
+  margin:0 auto;
+  @include mq("md"){
+      display: flex;
+      width: rem(355);
+  }
+}
+
+.contact-content p:nth-of-type(2){
+  text-indent: rem(17);
+  @include mq("md"){
+      text-indent: rem(0);
+
+  }
+}

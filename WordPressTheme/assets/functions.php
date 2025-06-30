@@ -1,20 +1,64 @@
+
+
 <?php
 function my_enqueue_scripts() {
-    // Google Fonts（preconnect & fontファミリー）
-    echo '<link rel="preconnect" href="https://fonts.googleapis.com">';
-    echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-    echo '<link href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">';
+    // Google Fonts - wp_head にフックして link タグを出力
+    add_action('wp_head', function () {
+        echo '<link rel="preconnect" href="https://fonts.googleapis.com">' . "\n";
+        echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>' . "\n";
+        echo '<link href="https://fonts.googleapis.com/css2?family=Gotu&family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">' . "\n";
+    });
 
     // CSS
-    wp_enqueue_style( 'swiper-css', 'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css', array(), null );
-    wp_enqueue_style( 'my-style', get_theme_file_uri( '/assets/css/style.css' ), array(), filemtime( get_theme_file_path( '/assets/css/style.css' ) ) );
+    wp_enqueue_style(
+        'swiper-css',
+        'https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css',
+        array(),
+        null
+    );
+
+    $style_path = get_theme_file_path('/assets/css/style.css');
+    if ( file_exists( $style_path ) ) {
+        wp_enqueue_style(
+            'my-style',
+            get_theme_file_uri('/assets/css/style.css'),
+            array(),
+            filemtime($style_path)
+        );
+    }
 
     // JS
-    wp_enqueue_script( 'jquery-cdn', 'https://code.jquery.com/jquery-3.6.0.js', array(), null, true );
-    wp_enqueue_script( 'jquery-inview', get_theme_file_uri( '/assets/js/jquery.inview.min.js' ), array('jquery'), null, true );
-    wp_enqueue_script( 'my-script', get_theme_file_uri( '/assets/js/script.js' ), array('jquery'), filemtime( get_theme_file_path( '/assets/js/script.js' ) ), true );
+    wp_enqueue_script(
+        'jquery-cdn',
+        'https://code.jquery.com/jquery-3.6.0.js',
+        array(),
+        null,
+        true
+    );
+
+    wp_enqueue_script(
+        'jquery-inview',
+        get_theme_file_uri('/assets/js/jquery.inview.min.js'),
+        array('jquery'),
+        null,
+        true
+    );
+
+    $script_path = get_theme_file_path('/assets/js/script.js');
+    if ( file_exists( $script_path ) ) {
+        wp_enqueue_script(
+            'my-script',
+            get_theme_file_uri('/assets/js/script.js'),
+            array('jquery'),
+            filemtime($script_path),
+            true
+        );
+    }
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
+
+
+
 
 /* ---------- 「投稿」の表記変更 ---------- */
 function Change_menulabel() {
@@ -135,30 +179,21 @@ add_action('phpmailer_init', function($phpmailer) {
 });
 
 
-function add_cf7_thanks_redirect_script() {
-  if (is_page('contact')) { // フォームがあるページのスラッグ
-    ?>
-    <script>
-      document.addEventListener('wpcf7mailsent', function(event) {
-        location.href = '<?php echo esc_url( get_permalink( get_page_by_path('thanks') ) ); ?>';
-      }, false);
-    </script>
-    <?php
-  }
+function remove_specific_body_classes( $classes ) {
+  // 削除したいクラスの一覧
+  $remove_classes = [
+    'page',
+    'page-id-123',
+    'page-template-default',
+    'wp-singular',
+    'wp-theme-WordPressThemeassets'
+  ];
+
+  // クラスの差分を取って不要なものを削除
+  return array_diff( $classes, $remove_classes );
 }
-add_action('wp_footer', 'add_cf7_thanks_redirect_script');
+add_filter( 'body_class', 'remove_specific_body_classes' );
 
 
-// リダイレクト
-function my_custom_wpcf7_redirect( $form_tag ) {
-  ?>
-  <script>
-    document.addEventListener( 'wpcf7mailsent', function( event ) {
-      window.location.href = '<?php echo esc_url( home_url( '/contact/thanks/' ) ); ?>';
-    }, false );
-  </script>
-  <?php
-}
-add_action( 'wp_footer', 'my_custom_wpcf7_redirect' );
 
 

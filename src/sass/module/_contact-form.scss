@@ -39,11 +39,19 @@
 .contact-form__input{
   margin-top: rem(15);
   border: rem(1) solid $green;
+  position: relative;
+  height: rem(40);
   @include mq("md"){
     margin-top: 0;
     width: 68.5%;
-    height: rem(40);
-  }
+    }
+}
+
+.contact-form__input span{
+  position: absolute;
+  top: 0%;
+  left: 0;
+  width: 100%;
 }
 
 .contact-form__input input{
@@ -56,16 +64,6 @@
 
 .contact-form__input input::placeholder{
   color: $green2;
-}
-
-.contact-form__input{
-  position: relative;
-}
-.contact-form__input span{
-  position: absolute;
-  top: 0%;
-  left: 0;
-  width: 100%;
 }
 
 .contact-form__check{
@@ -227,6 +225,10 @@
   @include mq("md"){
     margin: rem(38) auto 0;
   }
+}
+
+.contact-form__submit .wpcf7-spinner{
+  display: none;
 }
 
 

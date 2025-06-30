@@ -1057,12 +1057,6 @@ a {
 	margin-top: 4.5625rem;
 }
 
-.bgc-content {
-	background-color: #408f95;
-	display: flex;
-	flex-direction: column;
-}
-
 .blog-accordion__item + .blog-accordion__item {
 	margin-top: 0.625rem;
 }
@@ -1935,6 +1929,34 @@ a {
 	width: 8.4375rem;
 }
 
+.contact-content__error .contact-form__input,
+.contact-content__error .contact-form__textarea {
+	background-color: rgba(201, 72, 0, 0.2);
+	border: 0.0625rem solid #C94800;
+}
+
+.contact-content__error .contact-form__input input::-moz-placeholder {
+	color: #fff;
+}
+
+.contact-content__error .contact-form__input input::placeholder {
+	color: #fff;
+}
+
+.contact-content__text {
+	color: #C94800;
+	display: block;
+	font-family: "Noto-Sans JP", sans-serif;
+	font-size: 0.875rem;
+	margin: 0 auto;
+	max-width: 100%;
+	width: 15.3125rem;
+}
+
+.contact-content p:nth-of-type(2) {
+	text-indent: 1.0625rem;
+}
+
 .contact-fish {
 	position: relative;
 }
@@ -1975,7 +1997,16 @@ a {
 
 .contact-form__input {
 	border: 0.0625rem solid #408f95;
+	height: 2.5rem;
 	margin-top: 0.9375rem;
+	position: relative;
+}
+
+.contact-form__input span {
+	left: 0;
+	position: absolute;
+	top: 0%;
+	width: 100%;
 }
 
 .contact-form__input input {
@@ -1989,17 +2020,6 @@ a {
 
 .contact-form__input input::placeholder {
 	color: #ddf0f1;
-}
-
-.contact-form__input {
-	position: relative;
-}
-
-.contact-form__input span {
-	left: 0;
-	position: absolute;
-	top: 0%;
-	width: 100%;
 }
 
 .contact-form__check {
@@ -2145,6 +2165,10 @@ a {
 	text-align: center;
 }
 
+.contact-form__submit .wpcf7-spinner {
+	display: none;
+}
+
 .contact-layout {
 	margin-top: 6.6875rem;
 }
@@ -2162,6 +2186,12 @@ a {
 	top: -1.5rem;
 	width: 8.4375rem;
 	z-index: -10;
+}
+
+.error404 {
+	background-color: #408f95;
+	display: flex;
+	flex-direction: column;
 }
 
 .faq-accordion {
@@ -3327,7 +3357,7 @@ html {
 }
 
 .blog::after {
-	background-image: url(/assets/images/blog1.jpg);
+	background-image: url(../images/blog1.jpg);
 	background-position: top center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -3965,6 +3995,15 @@ html {
 	width: 18.8125rem;
 }
 
+.contact-content__text {
+	display: flex;
+	width: 22.1875rem;
+}
+
+.contact-content p:nth-of-type(2) {
+	text-indent: 0rem;
+}
+
 .contact-fish::before {
 	aspect-ratio: 301/138;
 	right: 3.125rem;
@@ -3989,7 +4028,6 @@ html {
 }
 
 .contact-form__input {
-	height: 2.5rem;
 	margin-top: 0;
 	width: 68.5%;
 }

@@ -125,9 +125,20 @@
     <p class="footer__copyright">Copyright &copy; 2021 - 2023 CodeUps LLC. All Rights Reserved.</p>
   </footer>
   <!-- footer -->
-   <script type="text/javascript">wpcf7.cached = 0; </script>
+   <script>
+  document.addEventListener( 'wpcf7mailsent', function( event ) {
+    location.href = '<?php echo esc_url( site_url( '/contact/thanks/' ) ); ?>';
+  }, false );
+</script>
+<script>
+  document.addEventListener('wpcf7invalid', function(event) {
+    // 入力チェックエラー時のリダイレクト先
+     location.href = '<?php echo esc_url( site_url( '/contact/error/' ) ); ?>';
+  }, false);
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<?php wp_footer(); ?>
+<?php wp_footer() ?>
 </body>
 
 </html>

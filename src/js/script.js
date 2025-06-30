@@ -240,6 +240,14 @@ $(function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  // エラーがある入力欄を取得してclass付与
+  document.querySelectorAll('.wpcf7-form [aria-invalid="true"]').forEach(function(el) {
+    el.classList.add('wpcf7-not-valid');
+  });
+});
+
+
 
 
 
