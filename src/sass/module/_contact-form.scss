@@ -173,7 +173,7 @@
 }
 
 .contact-form__send{
-  width: 82%;
+  width: fit-content;
   margin: rem(41) auto 0;
   @include mq("md"){
     text-align: center;

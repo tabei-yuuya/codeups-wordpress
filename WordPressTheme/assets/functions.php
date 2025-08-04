@@ -1,5 +1,3 @@
-
-
 <?php
 function my_enqueue_scripts() {
     // Google Fonts - wp_head にフックして link タグを出力
@@ -26,7 +24,6 @@ function my_enqueue_scripts() {
             filemtime($style_path)
         );
     }
-
     // JS
     wp_enqueue_script(
         'jquery-cdn',
@@ -35,7 +32,6 @@ function my_enqueue_scripts() {
         null,
         true
     );
-
     wp_enqueue_script(
         'jquery-inview',
         get_theme_file_uri('/assets/js/jquery.inview.min.js'),
@@ -43,7 +39,6 @@ function my_enqueue_scripts() {
         null,
         true
     );
-
     $script_path = get_theme_file_path('/assets/js/script.js');
     if ( file_exists( $script_path ) ) {
         wp_enqueue_script(
@@ -56,10 +51,6 @@ function my_enqueue_scripts() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
-
-
-
-
 /* ---------- 「投稿」の表記変更 ---------- */
 function Change_menulabel() {
     global $menu;
@@ -89,6 +80,12 @@ function Change_menulabel() {
 
   add_theme_support('post-thumbnails');
 
+  function custom_posts_per_page_for_category( $query ) {
+  if ( !is_admin() && $query->is_main_query() && $query->is_category() ) {
+    $query->set( 'posts_per_page', 4 ); // カテゴリーページだけ6件表示
+  }
+}
+add_action( 'pre_get_posts', 'custom_posts_per_page_for_category' );
 // 記事のPVを取得
 function getPostViews($postID) {
   $count_key = 'post_views_count';
@@ -100,7 +97,6 @@ function getPostViews($postID) {
   }
   return $count.' Views';
 }
-
 // 記事のPVをカウントする
 function setPostViews($postID) {
   $count_key = 'post_views_count';
@@ -115,7 +111,6 @@ function setPostViews($postID) {
   }
 }
 remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
 // コンタクトフォーム
 add_action('wpcf7_init', 'add_unique_campaign_select');
 
@@ -146,21 +141,14 @@ function render_unique_campaign_select($tag) {
         ]
       ]
     ]);
-
     if (!empty($posts)) {
       $title = esc_html($posts[0]->post_title);
       $html .= "<option value=\"{$title}\">{$title}</option>";
     }
   }
-
   $html .= '</select>';
-
   return $html;
 }
-
-
-
-
 /**
  * CF7 自動成型機能を無効にする
  */
@@ -169,16 +157,12 @@ function wpcf7_autop_return_false()
 	return false;
 }
 add_filter('wpcf7_autop_or_not', 'wpcf7_autop_return_false');
-
-
 add_action('phpmailer_init', function($phpmailer) {
   $phpmailer->isSMTP();
   $phpmailer->Host = '127.0.0.1';
   $phpmailer->Port = 1025;
   $phpmailer->SMTPAuth = false;
 });
-
-
 function remove_specific_body_classes( $classes ) {
   // 削除したいクラスの一覧
   $remove_classes = [
@@ -188,12 +172,7 @@ function remove_specific_body_classes( $classes ) {
     'wp-singular',
     'wp-theme-WordPressThemeassets'
   ];
-
   // クラスの差分を取って不要なものを削除
   return array_diff( $classes, $remove_classes );
 }
 add_filter( 'body_class', 'remove_specific_body_classes' );
-
-
-
-

@@ -665,7 +665,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

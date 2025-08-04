@@ -1,116 +1,4 @@
 <?php get_header(); ?>
-
-    <div class="hamburger u-mobile js-hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div class="drawer-menu js-drawer">
-      <div class="drawer-menu__inner inner">
-        <div class="drawer-menu__menu">
-          <div class="drawer-menu__container">
-            <div class="drawer-menu__items-1">
-              <ul class="drawer-menu__item">
-                <li class="drawer-menu__term">
-                  <div class="drawer-menu__img2">
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                  </div>
-                <a href="campaign.html" class="drawer-menu__link">キャンペーン</a>
-                </li>
-                <li class="drawer-menu__description"><a href="./campaign.html#tab__menu-2" class="drawer-menu__link">ライセンス取得</a></li>
-                <li class="drawer-menu__description"><a href="./campaign.html#tab__menu-3" class="drawer-menu__link">貸切体験ダイビング</a></li>
-                <li class="drawer-menu__description"><a href="./campaign.html#tab__menu-4" class="drawer-menu__link">ナイトダイビング</a></li>
-              </ul>
-            <ul class="drawer-menu__item">
-              <li class="drawer-menu__term">
-                <div class="drawer-menu__img2">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                </div>
-                <a href="about.html" class="drawer-menu__link">私たちについて</a>
-              </li>
-            </ul>
-            </div>
-            <div class="drawer-menu__items-2">
-            <ul class="drawer-menu__item">
-              <li class="drawer-menu__term">
-                <div class="drawer-menu__img2">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                </div>
-                <a href="<?php echo get_permalink( get_page_by_path('information') ); ?>information.html" class="drawer-menu__link">ダイビング情報</a>
-              </li>
-              <li class="drawer-menu__description"><a href="./infomation.html#tab__menu-1" class="drawer-menu__link">ライセンス講習</a></li>
-              <li class="drawer-menu__description"><a href="./infomation.html#tab__menu-3" class="drawer-menu__link">体験ダイビング</a></li>
-              <li class="drawer-menu__description"><a href="./infomation.html#tab__menu-2" class="drawer-menu__link">ファンダイビング</a></li>
-            </ul>
-            <ul class="drawer-menu__item">
-              <li class="drawer-menu__term">
-                <div class="drawer-menu__img2">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                </div>
-                <a href="./blog.html" class="footer__link">ブログ</a>
-              </li>
-            </ul>
-            </div>
-            <div class="drawer-menu__items-3">
-                <ul class="drawer-menu__item">
-                  <li class="drawer-menu__term">
-                    <div class="drawer-menu__img2">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                    </div>
-                  <a href="./voice.html" class="drawer-menu__link">お客様の声</a>
-                  </li>
-                </ul>
-                <ul class="drawer-menu__item">
-                  <li class="drawer-menu__term">
-                    <div class="drawer-menu__img2">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                    </div>
-                    <a href="./price.html" class="drawer-menu__link">料金一覧</a>
-                  </li>
-                  <li class="drawer-menu__description"><a href="./price.html#plice1" class="drawer-menu__link">ライセンス講習</a></li>
-                  <li class="drawer-menu__description"><a href="./price.html#plice2" class="drawer-menu__link">体験ダイビング</a></li>
-                  <li class="drawer-menu__description"><a href="./price.html#plice3" class="drawer-menu__link">ファンダイビング</a></li>
-                </ul>
-            </div>
-            <div class="drawer-menu__items-4">
-              <ul class="drawer-menu__item">
-                <li class="drawer-menu__term">
-                  <div class="drawer-menu__img2">
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                  </div>
-                  <a href="./faq.html" class="drawer-menu__link">よくある質問</a>
-                </li>
-              </ul>
-              <ul class="drawer-menu__item">
-                <li class="drawer-menu__term">
-                    <div class="drawer-menu__img2">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                    </div>
-                  <a href="policy.html" class="drawer-menu__link">プライバシー<br class="u-mobile">ポリシー</a>
-                </li>
-              </ul>
-              <ul class="drawer-menu__item">
-                <li class="drawer-menu__term">
-                    <div class="footer__img2">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                    </div>
-                    <a href="terms.html" class="drawer-menu__link">利用規約</a>
-                </li>
-              </ul>
-              <ul class="drawer-menu__item">
-                <li class="drawer-menu__term">
-                  <div class="drawer-menu__img2">
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
-                  </div>
-                  <a href="./contact.html" class="drawer-menu__link">お問い合わせ</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- header -->
 
 <!-- main visual -->
@@ -176,10 +64,10 @@
         </div>
       </div>
     </div>
-    <div class="mv__title">
+    <h1 class="mv__title">
       <p class=" mv__main">DIVING</p>
       <p class="mv__sub">into the ocean</p>
-    </div>
+    </h1>
   </div>
 </div>
 <!-- main visual -->
@@ -211,180 +99,68 @@
           <!-- swiper-wrapper -->
           <div class="swiper-wrapper campaign__cards campaign-cards">
             <!-- swiper-slider -->
-            <div class="swiper-slide campaign-cards__item">
-              <a href="#" class="campaign-cards__card card">
-                <div class="card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/campaign1.jpg" alt="たくさんの魚が泳いでいる画像">
-              </div>
-              <div class="card__contents">
-                <div class="card__head">
-                  <div class="card__label">ライセンス講習</div>
-                  <p class="card__title">ライセンス取得</p>
+             <?php
+              $args = array(
+                'post_type' => 'campaign', // カスタム投稿タイプ名
+                'posts_per_page' => 8,     // 表示件数
+                'orderby' => 'date',       // 並び順
+                'order' => 'DESC'
+              );
+
+              $custom_query = new WP_Query($args);
+
+              if ($custom_query->have_posts()) :
+                while ($custom_query->have_posts()) : $custom_query->the_post();
+              ?>
+               <div class="swiper-slide campaign-cards__item">
+              <a href="<?php echo get_post_type_archive_link('campaign'); ?>
+                " class="campaign-cards__card card">
+                <div class="card__img card__img--campaign__img">
+                <img src="<?php the_post_thumbnail_url(); ?>" alt="たくさんの魚が泳いでいる画像">
                 </div>
-                <div class="card__border border"></div>
+                <div class="card__contents card__contents--campaign-page">
+                <div class="card__head">
+                <?php
+								  $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
+								  if (!empty($taxonomy_terms)) {
+								  $limit = 5;
+								  $campaign_count = 0;
+								  foreach ($taxonomy_terms as $taxonomy_term) {
+								  if ($campaign_count < $limit) {
+								   echo '<span class="card__label">' . esc_html($taxonomy_term->name) . '</span>';
+								    $campaign_count++;
+								     } else {
+								    break;
+								      }
+								    }
+								  }
+								?>
+                  <h2 class="card__title card__title--campaign__title"><?php the_title(); ?></h2>
+                </div>
+                <div class="card__border border border--campaign"></div>
                 <div class="card__body">
                   <p class="card__info">全部コミコミ(お一人様)</p>
                   <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;56,000</div>
-                    <div class="card__price card__price--sm">&yen;46,000</div>
+                    <div class="card__price card__price--lg"><?php the_field('campaign_1'); ?></div>
+                    <div class="card__price card__price--sm"><?php the_field('campaign_2'); ?></div>
                   </div>
                 </div>
-              </div>
+                </div>
               </a>
             </div>
-            <div class="swiper-slide campaign-cards__item">
-              <a href="#" class="campaign-cards__card card">
-                <div class="card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/campaign2.jpg" alt="海と複数のボートの画像">
-              </div>
-              <div class="card__contents">
-                <div class="card__head">
-                  <div class="card__label">体験ダイビング</div>
-                  <p class="card__title">貸切体験ダイビング</p>
-                </div>
-                <div class="card__border border"></div>
-                <div class="card__body">
-                  <p class="card__info">全部コミコミ(お一人様)</p>
-                  <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;24,000</div>
-                    <div class="card__price card__price--sm">&yen;18,000</div>
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div>
-            <div class="swiper-slide campaign-cards__item">
-              <a href="#" class="campaign-cards__card card">
-                <div class="card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/campaign3.jpg" alt="小さいクラゲ達が暗い水の中を泳いでいる画像">
-              </div>
-              <div class="card__contents">
-                <div class="card__head">
-                  <div class="card__label">体験ダイビング</div>
-                  <p class="card__title">ナイトダイビング</p>
-                </div>
-                <div class="card__border border"></div>
-                <div class="card__body">
-                  <p class="card__info">全部コミコミ(お一人様)</p>
-                  <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;10,000</div>
-                    <div class="card__price card__price--sm">&yen;8,000</div>
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div>
-            <div class="swiper-slide campaign-cards__item">
-              <a href="#" class="campaign-cards__card card">
-                <div class="card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/campaign4.jpg" alt="4人のダイバーが海面に顔を出している画像">
-              </div>
-              <div class="card__contents">
-                <div class="card__head">
-                  <div class="card__label">ファンダイビング</div>
-                  <p class="card__title">貸切ファンダイビング</p>
-                </div>
-                <div class="card__border border"></div>
-                <div class="card__body">
-                  <p class="card__info">全部コミコミ(お一人様)</p>
-                  <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;20,000</div>
-                    <div class="card__price card__price--sm">&yen;16,000</div>
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div>
-            <div class="swiper-slide campaign-cards__item">
-              <a href="#" class="campaign-card__card card">
-                <div class="card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/campaign1.jpg" alt="たくさんの魚が泳いでいる画像">
-              </div>
-              <div class="card__contents">
-                <div class="card__head">
-                  <div class="card__label">ライセンス講習</div>
-                  <p class="card__title">ライセンス取得</p>
-                </div>
-                <div class="card__border border"></div>
-                <div class="card__body">
-                  <p class="card__info">全部コミコミ(お一人様)</p>
-                  <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;56,000</div>
-                    <div class="card__price card__price--sm">&yen;46,000</div>
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div>
-            <div class="swiper-slide campaign-cards__item">
-              <a href="#" class="campaign-card__card card">
-                <div class="card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/campaign2.jpg" alt="海と複数のボートの画像">
-              </div>
-              <div class="card__contents">
-                <div class="card__head">
-                  <div class="card__label">体験ダイビング</div>
-                  <p class="card__title">貸切体験ダイビング</p>
-                </div>
-                <div class="card__border border"></div>
-                <div class="card__body">
-                  <p class="card__info">全部コミコミ(お一人様)</p>
-                  <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;24,000</div>
-                    <div class="card__price card__price--sm">¥&yen;18,000</div>
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div>
-            <div class="swiper-slide campaign-cards__item">
-              <a href="#" class="campaign-card__card card">
-                <div class="card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/campaign3.jpg" alt="小さいクラゲ達が暗い水の中を泳いでいる画像">
-              </div>
-              <div class="card__contents">
-                <div class="card__head">
-                  <div class="card__label">体験ダイビング</div>
-                  <p class="card__title">ナイトダイビング</p>
-                </div>
-                <div class="card__border border"></div>
-                <div class="card__body">
-                  <p class="card__info">全部コミコミ(お一人様)</p>
-                  <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;10,000</div>
-                    <div class="card__price card__price--sm">&yen;8,000</div>
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div>
-            <div class="swiper-slide campaign-cards__item">
-              <a href="#" class="campaign-card__card card">
-                <div class="card__img">
-                <img src="<?php echo get_theme_file_uri(); ?>/images/campaign4.jpg" alt="4人のダイバーが海面に顔を出している画像">
-              </div>
-              <div class="card__contents">
-                <div class="card__head">
-                  <div class="card__label">ファンダイビング</div>
-                  <p class="card__title">貸切ファンダイビング</p>
-                </div>
-                <div class="card__border border"></div>
-                <div class="card__body">
-                  <p class="card__info">全部コミコミ(お一人様)</p>
-                  <div class="card__price-box">
-                    <div class="card__price card__price--lg">&yen;20,000</div>
-                    <div class="card__price card__price--sm">&yen;16,000</div>
-                  </div>
-                </div>
-              </div>
-              </a>
-            </div>
+            <?php
+              endwhile;
+              wp_reset_postdata(); 
+            else :
+              echo '<p>投稿が見つかりませんでした。</p>';
+            endif;
+            ?>
             <!-- /swiper-slider -->
           <!-- /swiper-wrapper -->
         </div>
       </div>
       <div class="campaign__btn">
-      <a href="campaign.html" class="btn">View more<span class="btn__arrow"></span></a>
+      <a href="<?php echo get_post_type_archive_link('campaign'); ?>" class="btn">View more<span class="btn__arrow"></span></a>
       </div>
      </div>
      </div>
@@ -407,10 +183,10 @@
       </div>
         <div class="about__content">
           <div class="about__img1 about__img1--sm">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/ocean1.jpg" alt="オレンジ色と白色の屋根の上に、シーサーの置物が置いてある画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/ocean1.webp" alt="オレンジ色と白色の屋根の上に、シーサーの置物が置いてある画像">
           </div>
           <div class="about__img1 about__img1--lg">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/ocean2.jpg" alt="海の中を2匹の黄色い魚が泳いでいる画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/ocean2.webp" alt="海の中を2匹の黄色い魚が泳いでいる画像">
           </div>
         </div>
           <div class="about__box">
@@ -419,7 +195,7 @@
               <p class="about__text about__text--sm">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。
                 <br>ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。</p>
                 <div class="about__btn">
-                  <a href="about.html" class="btn">View more<span class="btn__arrow"></span></a>
+                  <a href="<?php echo get_permalink( get_page_by_path('about-us') ); ?>" class="btn">View more<span class="btn__arrow"></span></a>
                 </div>
               </div>
             </div>
@@ -440,7 +216,7 @@
       </div>
       <div class="information__wrapper">
         <div class="information__img js-colorbox">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/info.jpg" alt="珊瑚礁の近くを泳ぐ黄色と青色の魚たち">
+          <img src="<?php echo get_theme_file_uri(); ?>/images/info.webp" alt="珊瑚礁の近くを泳ぐ黄色と青色の魚たち">
         </div>
 
         <div class="information__box">
@@ -451,9 +227,8 @@
           <div class="information__text information__text--sm">
             当店はダイビングライセンス（Cカード）世界<br class="u-mobile">最大の教育機関PADIの「正規店」として店舗登録されています。<br>正規登録店として、安心安全に初めての方でも安心安全にライセンス取得をサポート致します。
           </div>
-
           <div class="information__btn">
-          <a href="infomation.html" class="btn">View more<span class="btn__arrow"></span></a>
+          <a href="<?php echo get_permalink( get_page_by_path('information') ); ?>" class="btn">View more<span class="btn__arrow"></span></a>
          </div>
         </div>
       </div>
@@ -474,70 +249,52 @@
         </div>
 
         <div class="blog__cards blog-cards">
-          <div class="blog-cards__card blog-card">
-            <a class="blog-card__link" href="#">
-              <div class="blog-card__item ">
-                <div class="blog-card__header">
-                  <div class="blog-card__figure">
-                    <div class="blog-card__img">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/blog2.jpg" alt="オレンジ色の珊瑚">
-                    </div>
-                  </div>
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="">2023.11/17</time>
-                  <p class="blog-card__title">ライセンス取得</p>
-                  <div class="blog-border border border--blog"></div>
-                  <p class="blog-card__copy">ここにテキストが入ります。ここにテキ<br>ストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    <br>ここにテキストが入ります。ここにテキ<br>ストが入ります。ここにテキスト</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="blog-cards__card blog-card">
-            <a class="blog-card__link" href="#">
-              <div class="blog-card__item ">
-                <div class="blog-card__header">
-                  <div class="blog-card__figure">
-                    <div class="blog-card__img">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/blog3.jpg" alt="ウミガメの画像">
-                    </div>
-                  </div>
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="">2023.11/17</time>
-                  <p class="blog-card__title">ウミガメと泳ぐ</p>
-                  <div class="blog-border border border--blog"></div>
-                  <p class="blog-card__copy">ここにテキストが入ります。ここにテキ<br>ストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    <br>ここにテキストが入ります。ここにテキ<br>ストが入ります。ここにテキスト</p>
-                </div>
-              </div>
-            </a>
-          </div>
-          <div class="blog-cards__card blog-card">
-            <a class="blog-card__link" href="#">
-              <div class="blog-card__item ">
-                <div class="blog-card__header">
-                  <div class="blog-card__figure">
-                    <div class="blog-card__img">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/blog4.jpg" alt="珊瑚礁の中にいるカクレクマノミ">
-                    </div>
-                  </div>
-                </div>
-                <div class="blog-card__body">
-                  <time class="blog-card__date" datetime="">2023.11/17</time>
-                  <p class="blog-card__title">カクレクマノミ</p>
-                  <div class="blog-border border border--blog"></div>
-                  <p class="blog-card__copy">ここにテキストが入ります。ここにテキ<br>ストが入ります。ここにテキストが入ります。ここにテキストが入ります。
-                    <br>ここにテキストが入ります。ここにテキ<br>ストが入ります。ここにテキスト</p>
-                </div>
-              </div>
-            </a>
-          </div>
-        </div>
+          <?php
+            $args = array(
+              'post_type' => 'post', // カスタム投稿タイプ名
+              'posts_per_page' => 3,     // 表示件数
+              'orderby' => 'date',       // 並び順
+              'order' => 'DESC'
+            );
 
+            $custom_query = new WP_Query($args);
+
+            if ($custom_query->have_posts()) :
+              while ($custom_query->have_posts()) : $custom_query->the_post();
+            ?>
+            <div class="blog-cards__card blog-card">
+              <a class="blog-card__link" href="<?php echo get_permalink( get_page_by_path('single.php') ); ?>">
+                <div class="blog-card__item ">
+                  <div class="blog-card__header">
+                    <div class="blog-card__figure">
+                      <div class="blog-card__img">
+                     <?php if(get_the_post_thumbnail()): ?>
+                      <img src="<?php the_post_thumbnail_url(); ?>" alt="">
+                    <?php else : ?>
+                      <img src="<?php echo get_theme_file_uri();?>/assets/images/noimage.webp" alt="noimage">
+                    <?php endif; ?>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="blog-card__body">
+                    <time class="blog-card__date" datetime="<?php the_time('cf'); ?>"><?php the_time('Y.m/d'); ?></time>
+                    <p class="blog-card__title"><?php the_title(); ?></p>
+                    <div class="blog-border border border--blog"></div>
+                    <p class="blog-card__copy"><?php the_excerpt(); ?><</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+ <?php
+  endwhile;
+  wp_reset_postdata();
+else :
+  echo '<p>投稿が見つかりませんでした。</p>';
+endif;
+?>
+        </div>
         <div class="blog__btn">
-          <a href="blog.html" class="btn">View more<span class="btn__arrow"></span></a>
+          <a href="<?php echo get_permalink( get_page_by_path('blog') ); ?>" class="btn">View more<span class="btn__arrow"></span></a>
         </div>
 
       </div>
@@ -610,9 +367,8 @@
               </a>
           </div>
         </div>
-
         <div class="voice__btn">
-          <a href="voice.html" class="btn">View more<span class="btn__arrow"></span></a>
+          <a href="<?php echo get_post_type_archive_link('voice'); ?>" class="btn">View more<span class="btn__arrow"></span></a>
         </div>
       </div>
     </section>
@@ -630,7 +386,7 @@
         </div>
         <div class="price__container">
           <div class="price__img1 u-mobile">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/price2.jpg" alt="海を泳いでいる亀の画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/price2.webp" alt="海を泳いでいる亀の画像">
           </div>
             <div class="price__content">
               <div class="price__lists">
@@ -701,14 +457,12 @@
               </div>
 
               <div class="price__img2 js-colorbox u-desktop">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/price1.jpg" alt="珊瑚礁の周りを泳ぐ子魚たち">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/price1.webp" alt="珊瑚礁の周りを泳ぐ子魚たち">
               </div>
-
          </div>
         </div>
-
         <div class="price__btn">
-          <a href="price.html" class="btn">View more<span class="btn__arrow"></span></a>
+          <a href="<?php echo get_permalink( get_page_by_path('price') ); ?>" class="btn">View more<span class="btn__arrow"></span></a>
         </div>
 
       </div>
@@ -746,9 +500,8 @@
               <p class="contact__title contact__title--sub">
                 ご予約・お問い合わせはコチラ
               </p>
-
               <div class="contact__btn">
-                <a href="sitemap.html" class="btn">Contact us<span class="btn__arrow"></span></a>
+                <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
               </div>
           </div>
 

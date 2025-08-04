@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="./assets/images/blog-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>//images/blog-sp-mv.jpg" alt="魚の大群の画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/blog-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/blog-sp-mv.webp" alt="魚の大群の画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -30,68 +30,64 @@
       </div>
     <?php } ?>
 
-    <section class="blog-content blog-content-layout content-fish">
-      <div class="blog-content__inner inner">
-        <div class="blog-content__wrapper">
-          <div class="blog-content__box">
-            <div class="blog-content__cards blog-cards blog-cards--blog-content">
-            <?php
-              $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-              $args = array(
-                'post_type' => 'post', // 通常投稿
-                'posts_per_page' => 10, // 表示件数は調整可
-                'paged' => $paged
-              );
-              $the_query = new WP_Query($args);
-              ?>
-            <?php if (have_posts()): while (have_posts()): the_post() ;?>
-            <div class="blog-cards__card blog-card">
-                <a class="blog-card__link blog-card__link--blog-content" href="<?php echo get_permalink( get_page_by_path('single.php') ); ?>
-">
-                  <div class="blog-card__item ">
+<section class="blog-content blog-content-layout content-fish">
+  <div class="blog-content__inner inner">
+    <div class="blog-content__wrapper">
+      <div class="blog-content__box">
+        <div class="blog-content__cards blog-cards blog-cards--blog-content">
+          <?php if (have_posts()): ?>
+            <?php while (have_posts()): the_post(); ?>
+              <div class="blog-cards__card blog-card">
+                <a class="blog-card__link blog-card__link--blog-content" href="<?php the_permalink(); ?>">
+                  <div class="blog-card__item">
                     <div class="blog-card__header">
                       <div class="blog-card__figure">
                         <div class="blog-card__img blog-card__img--blog-content">
-                        <?php if(get_the_post_thumbnail()): ?>
-                          <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
-                        <?php else : ?>
-                          <img src="<?php echo get_them_file_uri();?>/assets/images/noimage.jpg" alt="noimage">
-                        <?php endif; ?>
+                          <?php if (has_post_thumbnail()): ?>
+                            <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
+                          <?php else: ?>
+                            <img src="<?php echo get_theme_file_uri(); ?>/assets/images/noimage.jpg" alt="noimage">
+                          <?php endif; ?>
                         </div>
                       </div>
                     </div>
                     <div class="blog-card__body">
-                      <time  class="blog-card__date" datetime="<?php the_time('cf'); ?>"><?php the_time('Y.m/d'); ?></time>
+                      <time class="blog-card__date" datetime="<?php the_time('Y-m-d'); ?>"><?php the_time('Y.m/d'); ?></time>
                       <p class="blog-card__title"><?php the_title(); ?></p>
                       <div class="blog-border border border--blog"></div>
-                      <p class="blog-card__copy"><?php the_excerpt(); ?></p>
+                      <p class="blog-card__copy"><?php echo wp_trim_words(get_the_excerpt(), 30, '…'); ?></p>
                     </div>
                   </div>
                 </a>
               </div>
-      <?php endwhile; ?>
-            </div>
-            <div class="blog-content__pagination pagination">
-            <?php
-          echo paginate_links(array(
-              'format' => '?paged=%#%',
-              'current' => max(1, $paged),
-              'total' => $the_query->max_num_pages,
-              'mid_size'  => 3, // ← ここを小さくすると「...」が出やすくなる
-              'end_size'  => 1,
-              'prev_text' => '',
-              'next_text' => '',
-              ));
-              ?>
-            </div>
-            <?php endif; wp_reset_postdata(); ?>
-          </div>
-              <?php get_sidebar() ?>
+            <?php endwhile; ?>
         </div>
-        </div>
-    </section>
 
-    
+        <div class="blog-content__pagination pagination">
+          <?php
+          global $wp_query;
+          echo paginate_links(array(
+            'format' => '?paged=%#%',
+            'current' => max(1, get_query_var('paged')),
+            'total' => $wp_query->max_num_pages,
+            'mid_size' => 2,
+            'end_size' => 1,
+            'prev_text' => '«',
+            'next_text' => '»',
+          ));
+          ?>
+        </div>
+
+        <?php else: ?>
+          <p>投稿が見つかりませんでした。</p>
+        <?php endif; ?>
+      </div>
+
+      <?php get_sidebar(); ?>
+    </div>
+  </div>
+</section>
+
 
 
     <!-- contact -->
@@ -100,7 +96,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

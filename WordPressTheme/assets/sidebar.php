@@ -20,7 +20,7 @@
                     <?php if(get_the_post_thumbnail()): ?>
                       <img src="<?php the_post_thumbnail_url('large'); ?>" alt="">
                     <?php else : ?>
-                      <img src="<?php echo get_theme_file_uri();?>/assets/images/noimage.jpg" alt="noimage">
+                      <img src="<?php echo get_theme_file_uri();?>/assets/images/noimage.webp" alt="noimage">
                     <?php endif; ?>
 
                     </div>
@@ -54,7 +54,7 @@
                 <?php if(get_the_post_thumbnail()): ?>
                   <img src="<?php the_post_thumbnail_url(); ?>" alt="">
                 <?php else : ?>
-                  <img src="<?php echo get_theme_file_uri();?>/assets/images/noimage.jpg" alt="noimage">
+                  <img src="<?php echo get_theme_file_uri();?>/assets/images/noimage.webp" alt="noimage">
                 <?php endif; ?>
 
                 </figure>
@@ -97,7 +97,7 @@
                       <?php if(get_the_post_thumbnail()): ?>
                         <img src="<?php the_post_thumbnail_url(); ?>" alt="">
                       <?php else : ?>
-                        <img src="<?php echo get_theme_file_uri();?>/assets/images/noimage.jpg" alt="noimage">
+                        <img src="<?php echo get_theme_file_uri();?>/assets/images/noimage.webp" alt="noimage">
                       <?php endif; ?>
                       </div>
                     <div class="card__contents card__contents--blog-campaign">

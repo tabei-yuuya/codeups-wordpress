@@ -3,8 +3,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>//images/campaign-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>//images/campaign-sp-mv.jpg" alt="2匹の魚が泳いでいる様子">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/campaign-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/campaign-sp-mv.webp" alt="2匹の魚が泳いでいる様子">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -45,7 +45,7 @@
           $paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
           // スマホ判定（WP組み込み関数）
-          $per_page = wp_is_mobile() ? 4 : 6; // スマホは4件、それ以外は10件
+          $per_page = wp_is_mobile() ? 4 : 6; // スマホは4件、それ以外は6件
 
           $args = array(
               'post_type' => 'campaign', // 投稿タイプを適宜変更
@@ -136,7 +136,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

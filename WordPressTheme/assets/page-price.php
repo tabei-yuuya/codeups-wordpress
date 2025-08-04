@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>//images/price-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="./assets/images/price-sp-mv.jpg" alt="海面からダイバーの頭が見えている画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>//images/price-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/price-sp-mv.webp" alt="海面からダイバーの頭が見えている画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -39,7 +39,7 @@
 
             foreach ($courses as $index => $course) :
             ?>
-              <tr class="price-list__row">
+              <tr id="price1" class="price-list__row">
                 <?php if ($index === 0): ?>
                   <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
                     <span>ライセンス講習</span>
@@ -56,7 +56,7 @@
 
             foreach ($courses as $index => $course) :
             ?>
-              <tr class="price-list__row">
+              <tr id="price2" class="price-list__row">
                 <?php if ($index === 0): ?>
                   <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
                     <span>体験ダイビング</span>
@@ -73,7 +73,7 @@
 
             foreach ($courses as $index => $course) :
             ?>
-              <tr class="price-list__row">
+              <tr id="price3" class="price-list__row">
                 <?php if ($index === 0): ?>
                   <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
                     <span>ファンダイビング</span>
@@ -113,7 +113,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

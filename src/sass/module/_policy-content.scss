@@ -11,11 +11,15 @@
   }
 }
 .policy-content__items{
+  margin-left: rem(15);
   margin-top: rem(31);
   font-family: $third-font-family;
   font-weight: $regular;
   color: $black;
   line-height: 2;
+    @include mq("md"){
+      margin-left: 0;
+  }
 }
 
 .policy-content__items h2{

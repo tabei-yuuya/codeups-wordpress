@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="./assets/images/campaign-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="./assets/images/campaign-sp-mv.jpg" alt="2匹の魚が泳いでいる様子">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/campaign-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/campaign-sp-mv.webp" alt="2匹の魚が泳いでいる様子">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -47,73 +47,78 @@
           <?php endforeach; ?>
         </ol>
         <div class="campaign-content__area">
-        <?php
-          $paged = get_query_var('paged') ? get_query_var('paged') : 1;
+     <?php
+$paged = get_query_var('paged') ? get_query_var('paged') : 1;
 
-          // スマホ判定（WP組み込み関数）
-          $per_page = wp_is_mobile() ? 4 : 6; // スマホは4件、それ以外は10件
+// 現在のカテゴリースラッグを取得
+$term = get_queried_object();
 
-          $args = array(
-              'post_type' => 'campaign', // 投稿タイプを適宜変更
-              'posts_per_page' => 4,
-              'paged' => $paged
-          );
+$args = array(
+  'post_type' => 'campaign',
+  'posts_per_page' => 4,
+  'paged' => $paged,
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'campaign_category',
+      'field'    => 'slug',
+      'terms'    => $term->slug,
+    ),
+  ),
+);
 
-          $the_query = new WP_Query($args);
-          ?>
-          <ul class="campaign-content__items campaign-cards campaign-cards--grid">
-          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-            <!-- ループ処理開始 -->
-            <!-- 表示する中身（ここから） -->
-            <li class="campaign-cards__item campaign-cards__item--campaign">
-            <div href="#" class="campaign-cards__card card">
-              <div class="card__img card__img--campaign__img">
-              <?php the_post_thumbnail( 'full'); ?>
+$the_query = new WP_Query($args);
+?>
+
+<ul class="campaign-content__items campaign-cards campaign-cards--grid">
+<?php if ( $the_query->have_posts() ) : ?>
+  <?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+    <li class="campaign-cards__item campaign-cards__item--campaign">
+      <div class="campaign-cards__card card">
+        <div class="card__img card__img--campaign__img">
+          <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title_attribute(); ?>">
+        </div>
+        <div class="card__contents card__contents--campaign-page">
+          <div class="card__head">
+            <?php
+              $taxonomy_terms = get_the_terms(get_the_ID(), 'campaign_category');
+              if ( ! empty($taxonomy_terms) ) {
+                foreach ( $taxonomy_terms as $term ) {
+                  echo '<span class="card__label">' . esc_html($term->name) . '</span>';
+                }
+              }
+            ?>
+            <h2 class="card__title card__title--campaign__title"><?php the_title(); ?></h2>
+          </div>
+          <div class="card__border border border--campaign"></div>
+          <div class="card__body">
+            <p class="card__info">全部コミコミ(お一人様)</p>
+            <div class="card__price-box">
+              <div class="card__price card__price--lg"><?php the_field('campaign_1'); ?></div>
+              <div class="card__price card__price--sm"><?php the_field('campaign_2'); ?></div>
+            </div>
+            <div class="card__box u-desktop">
+              <p class="card__text"><?php the_excerpt(); ?></p>
+              <div class="card__contact">
+                <time class="card__time" datetime="<?php echo get_the_date('Y-m-d'); ?>">
+                  <?php echo get_the_date('Y.m.d'); ?>
+                </time>
+                <p class="card__contact-text">ご予約・お問い合わせはコチラ</p>
               </div>
-              <div class="card__contents card__contents--campaign-page">
-              <div class="card__head">
-                <?php
-								  $taxonomy_terms = get_the_terms($post->ID, 'campaign_category');
-								  if (!empty($taxonomy_terms)) {
-								  $limit = 5;
-								  $campaign_type_count = 0;
-								  foreach ($taxonomy_terms as $taxonomy_term) {
-								  if ($campaign_type_count < $limit) {
-								   echo '<span class="card__label">' . esc_html($taxonomy_term->name) . '</span>';
-								    $campaign_type_count++;
-								     } else {
-								    break;
-								      }
-								    }
-								  }
-								?>
-                <h2 class="card__title card__title--campaign__title"><?php the_title(); ?></h2>
-                </div>
-                <div class="card__border border border--campaign"></div>
-                <div class="card__body">
-                  <p class="card__info">全部コミコミ(お一人様)</p>
-                  <div class="card__price-box">
-                    <div class="card__price card__price--lg"><?php the_field('campaign_1'); ?></div>
-                    <div class="card__price card__price--sm"><?php the_field('campaign_2'); ?></div>
-                  </div>
-                  <div class="card__box u-desktop">
-                    <p class="card__text">ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキストが入ります。ここにテキスト</p>
-                    <div class="card__contact">
-                      <time class="card__time">2023/6/1-9/30</time>
-                      <p class="card__contact-text">ご予約・お問い合わせはコチラ</p>
-                    </div>
-                    <div class="card__btn">
-                      <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
-                    </div>
-                  </div>
-                </div>
+              <div class="card__btn">
+                <a href="<?php the_permalink(); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
               </div>
-              </div>
-            </li>
-            <?php endwhile;
-				endif; ?>
-              <!-- ループ処理終了 -->
-          </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  <?php endwhile; ?>
+<?php else : ?>
+  <p>キャンペーンが見つかりませんでした。</p>
+<?php endif; ?>
+<?php wp_reset_postdata(); ?>
+</ul>
+
           <div class="campaign-content__pagination pagination">
           <?php
           $big = 999999999; // unique number
@@ -141,7 +146,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

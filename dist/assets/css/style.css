@@ -583,6 +583,7 @@ a {
 	font-size: 0.75rem;
 	line-height: 1;
 	margin: 2.75rem 0.875rem 0;
+	text-align: center;
 }
 
 .hamburger {
@@ -1050,7 +1051,7 @@ a {
 .about-gallery__list-item:nth-of-type(6n + 6) img {
 	aspect-ratio: 345/523;
 	height: 100%;
-	width: 30.75rem;
+	width: 100%;
 }
 
 .about-layout {
@@ -2119,7 +2120,8 @@ a {
 
 .contact-form__send {
 	margin: 2.5625rem auto 0;
-	width: 82%;
+	width: -moz-fit-content;
+	width: fit-content;
 }
 
 .contact-form__send .wpcf7-list-item-label {
@@ -2721,6 +2723,7 @@ body {
 	font-family: "Noto-Sans JP", sans-serif;
 	font-weight: 300;
 	line-height: 2;
+	margin-left: 0.9375rem;
 	margin-top: 1.9375rem;
 }
 
@@ -3075,6 +3078,7 @@ body {
 	font-family: "Noto-Sans JP", sans-serif;
 	font-weight: 300;
 	line-height: 2;
+	margin-left: 0.9375rem;
 	margin-top: 1.875rem;
 }
 
@@ -4272,6 +4276,10 @@ html {
 	max-width: 50rem;
 }
 
+.policy-content__items {
+	margin-left: 0;
+}
+
 .policy-content__items h2 {
 	font-size: 2rem;
 }
@@ -4439,6 +4447,10 @@ html {
 .terms-content__wrapper {
 	margin: 0 auto;
 	max-width: 50rem;
+}
+
+.terms-content__items {
+	margin-left: 0;
 }
 
 .terms-content__items h2 {

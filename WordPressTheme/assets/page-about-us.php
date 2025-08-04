@@ -3,8 +3,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/about-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/about-sp-mv.jpg" alt="シーサーの銅像の画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/about-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/about-sp-mv.webp" alt="シーサーの銅像の画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -34,10 +34,10 @@
           <div class="about-content__wrapper about">
           <div class="about__content">
             <div class="about__img1 about__img1--sm u-desktop">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/ocean1.jpg" alt="オレンジ色と白色の屋根の上に、シーサーの置物が置いてある画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/ocean1.webp" alt="オレンジ色と白色の屋根の上に、シーサーの置物が置いてある画像">
             </div>
             <div class="about__img1 about__img1--lg about__img1--about-page">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/ocean2.jpg" alt="海の中を2匹の黄色い魚が泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/ocean2.webp" alt="海の中を2匹の黄色い魚が泳いでいる画像">
             </div>
           </div>
             <div class="about__box about__box--about-page">
@@ -70,7 +70,7 @@
         ?>
           <li class="about-gallery__list-item js-modal-open" data-target="<?php echo $index + 1; ?>">
             <?php if (empty($fields['gallery_1'])) : ?>
-              <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.jpg" alt="画像がありません">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.webp" alt="画像がありません">
             <?php else : ?>
               <img src="<?php echo esc_url($imgurl[0]); ?>" alt="ギャラリー画像<?php echo $index + 1; ?>">
             <?php endif; ?>
@@ -78,13 +78,12 @@
         <?php endforeach; ?>
       </ul>
 
-      </ul>
       <?php
           $imgGroup = SCF::get('modalGroup');
           foreach ($imgGroup as $index => $fields) :
             $imgurl = wp_get_attachment_image_src($fields['modal'], 'large');?>
             <?php if (empty($fields['modal'])) : ?>
-              <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.jpg" alt="画像がありません">
+              <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.webp" alt="画像がありません">
             <?php else : ?>
               <div id="<?php echo $index + 1; ?>" class="about-gallery-modal modal js-modal">
               <div class="modal__inner
@@ -97,17 +96,7 @@
               </div>
              <?php endif; ?>
         <?php endforeach; ?>
-        
-        <!-- <div id="1" class="about-gallery-modal modal js-modal">
-        <div class="modal__inner modal__inner--hight">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/gallery1.jpg" alt="珊瑚礁の画像">
-        </div>
-      </div>
-      <div id="2" class="about-gallery-modal modal js-modal">
-        <div class="modal__inner">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/gallery2.jpg" alt="エメラルドグリーンの海">        </div>
-      </div>
-    </div> -->
+
     </div>
     </section>
     <!-- /about-gallery -->
@@ -120,7 +109,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

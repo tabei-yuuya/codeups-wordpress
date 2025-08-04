@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/sitemap-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/sitemap-sp-mv.jpg" alt="">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/sitemap-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/sitemap-sp-mv.webp" alt="サンゴ礁の上を熱帯魚が泳ぐ画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -141,7 +141,7 @@
         </div>
       </div>
       <div class="sitemap-content__img u-mobile">
-        <img src="<?php echo get_theme_file_uri(); ?>//images/voice-habadai.png" alt="右に向かって泳ぐ6匹のキンギョハナダイのイラスト">
+        <img src="<?php echo get_theme_file_uri(); ?>/images/voice-hanadai.png" alt="右に向かって泳ぐ6匹のキンギョハナダイのイラスト">
       </div>
     </div>
     <!-- sitemap-page -->
@@ -153,7 +153,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

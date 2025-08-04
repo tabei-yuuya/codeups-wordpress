@@ -24,7 +24,6 @@
     </section>
     <!-- terms-page -->
   </main>
-</div>
   <!-- main -->
 
 <?php get_footer(); ?>

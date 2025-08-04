@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/sitemap-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/sitemap-sp-mv.jpg" alt="珊瑚礁の周りをカラフルな魚たちが泳いでいる画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/sitemap-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/sitemap-sp-mv.webp" alt="珊瑚礁の周りをカラフルな魚たちが泳いでいる画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -22,13 +22,13 @@
 <!-- main -->
   <main>
     <!-- policy-page -->
-    <div class="breadcrumb breadcrumb-layout">
-      <div class="breadcrumb__inner inner">
-        <a href="index.html" class="breadcrumb__link">top</a>
-        <span class="breadcrumb__arrow"></span>
-        <a href="#" class="breadcrumb__link">プライバシーポリシー</a>
+<?php if (function_exists('bcn_display')) { ?>
+      <div class="breadcrumb breadcrumb-layout">
+        <div class="breadcrumb__inner inner">
+        <?php bcn_display(); ?>
+        </div>
       </div>
-    </div>
+    <?php } ?>
 
     <section class="policy-content policy-content-layout content-fish">
       <div class="policy-content__inner inner">

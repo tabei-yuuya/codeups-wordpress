@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="<?php echo get_theme_file_uri(); ?>//images/blog-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>//images/blog-sp-mv.jpg" alt="魚の大群の画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>//images/blog-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>//images/blog-sp-mv.webp" alt="魚の大群の画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -46,8 +46,7 @@
               ?>
             <?php if (have_posts()): while (have_posts()): the_post() ;?>
             <div class="blog-cards__card blog-card">
-                <a class="blog-card__link blog-card__link--blog-content" href="<?php echo get_permalink( get_page_by_path('single.php') ); ?>
-">
+                <a class="blog-card__link blog-card__link--blog-content" href="<?php echo get_permalink( get_page_by_path('single.php') ); ?>">
                   <div class="blog-card__item ">
                     <div class="blog-card__header">
                       <div class="blog-card__figure">
@@ -55,7 +54,7 @@
                         <?php if(get_the_post_thumbnail()): ?>
                           <img src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?>">
                         <?php else : ?>
-                          <img src="<?php echo get_them_file_uri();?>/assets/images/noimage.jpg" alt="noimage">
+                          <img src="<?php echo get_them_file_uri();?>/assets/images/noimage.webp" alt="noimage">
                         <?php endif; ?>
                         </div>
                       </div>
@@ -100,7 +99,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

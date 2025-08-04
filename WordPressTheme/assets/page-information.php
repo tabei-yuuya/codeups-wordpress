@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/info-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/info-sp-mv.jpg" alt="ダイバーが珊瑚礁の横を泳いでいる画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/info-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/info-sp-mv.webp" alt="ダイバーが珊瑚礁の横を泳いでいる画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -52,7 +52,7 @@
               <p class="info-card__text">泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします&#33;スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう&#33;</p>
             </div>
             <figure class="info-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/info-license.jpg" alt="5人のダイバーが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-license.webp" alt="5人のダイバーが泳いでいる画像">
             </figure>
           </div>
         </div>
@@ -64,7 +64,7 @@
               <p class="info-card__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意&#33;</p>
             </div>
             <figure class="info-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/info-fundiving.jpg" alt="珊瑚礁の周りを魚の群れが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-fundiving.webp" alt="珊瑚礁の周りを魚の群れが泳いでいる画像">
             </figure>
           </div>
         </div>
@@ -76,7 +76,7 @@
               <p class="info-card__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意&#33;</p>
             </div>
             <figure class="info-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/info-experience.jpg" alt="5人のダイバーが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-experience.webp" alt="5人のダイバーが泳いでいる画像">
             </figure>
           </div>
         </div>
@@ -92,7 +92,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">

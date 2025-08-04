@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/contact-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/contact-sp-mv.jpg" alt="エメラルドグリーンの海と
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/contact-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/contact-sp-mv.webp" alt="エメラルドグリーンの海と
       白い砂浜の画像">
     </picture>
     </div>
@@ -41,19 +41,7 @@
           </div>
         </div>
     </div>
-
-
-
-
-
-
-
-    
     <!-- contact-page -->
-
-    
   </main>
-
-  
   <!-- main -->
 <?php get_footer(); ?>

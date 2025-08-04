@@ -22,18 +22,20 @@
                 <div class="footer__img2">
                   <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
                 </div>
-              <a href="./campaign.html" class="footer__link">キャンペーン</a>
+                <a href="<?php echo get_post_type_archive_link('campaign'); ?>
+                " class="footer__link">キャンペーン</a>
               </li>
-              <li class="footer__description"><a href="#" class="footer__link">ライセンス取得</a></li>
-              <li class="footer__description"><a href="#" class="footer__link">貸切体験ダイビング</a></li>
-              <li class="footer__description"><a href="#" class="footer__link">ナイトダイビング</a></li>
+              <li class="footer__description"><a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-2' ) ); ?>" class="footer__link">ライセンス取得</a></li>
+              <li class="footer__description"><a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-3' ) ); ?>" class="footer__link">貸切体験ダイビング</a></li>
+              <li class="footer__description"><a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-4' ) ); ?>" class="footer__link">ナイトダイビング</a></li>
             </ul>
           <ul class="footer__item">
             <li class="footer__term">
               <div class="footer__img2">
                 <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
               </div>
-              <a href="./about.html" class="footer__link">私たちについて</a>
+              <a href="<?php echo get_permalink( get_page_by_path('about-us') ); ?>
+                " class="footer__link">私たちについて</a>
             </li>
           </ul>
 
@@ -45,18 +47,20 @@
               <div class="footer__img2">
                 <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
               </div>
-              <a href="./infomation.html" class="footer__link">ダイビング情報</a>
+              <a href="<?php echo get_permalink( get_page_by_path('information') ); ?>
+              " class="footer__link">ダイビング情報</a>
             </li>
-            <li class="footer__description"><a href="./infomation.html#tab__menu-1" class="footer__link">ライセンス講習</a></li>
-            <li class="footer__description"><a href="./infomation.html#tab__menu-3" class="footer__link">体験ダイビング</a></li>
-            <li class="footer__description"><a href="./infomation.html#tab__menu-2" class="footer__link">ファンダイビング</a></li>
+            <li class="footer__description"><a href="<?php echo esc_url( home_url( '/information/#tab__menu-1' ) ); ?>" class="footer__link">ライセンス講習</a></li>
+            <li class="footer__description"><a href="<?php echo esc_url( home_url( '/information/#tab__menu-2' ) ); ?>" class="footer__link">体験ダイビング</a></li>
+            <li class="footer__description"><a href="<?php echo esc_url( home_url( '/information/#tab__menu-3' ) ); ?>" class="footer__link">ファンダイビング</a></li>
           </ul>
           <ul class="footer__item">
             <li class="footer__term">
               <div class="footer__img2">
                 <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
               </div>
-              <a href="./blog.html" class="footer__link">ブログ</a>
+              <a href="<?php echo get_permalink( get_page_by_path('blog') ); ?>
+              " class="footer__link">ブログ</a>
             </li>
           </ul>
           </div>
@@ -66,7 +70,8 @@
                   <div class="footer__img2">
                     <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
                   </div>
-                <a href="#" class="footer__link">お客様の声</a>
+                <a href="<?php echo get_post_type_archive_link('voice'); ?>
+                  " class="footer__link">お客様の声</a>
                 </li>
               </ul>
 
@@ -75,11 +80,12 @@
                   <div class="footer__img2">
                     <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
                   </div>
-                  <a href="./price.html" class="footer__link">料金一覧</a>
+                  <a href="<?php echo get_permalink( get_page_by_path('price') ); ?>
+                  " class="footer__link">料金一覧</a>
                 </li>
-                <li class="footer__description"><a href="#" class="footer__link">ライセンス講習</a></li>
-                <li class="footer__description"><a href="#" class="footer__link">体験ダイビング</a></li>
-                <li class="footer__description"><a href="#" class="footer__link">ファンダイビング</a></li>
+                <li class="footer__description"><a href="<?php echo esc_url( home_url( '/price/#price1' ) ); ?>" class="footer__link">ライセンス講習</a></li>
+                <li class="footer__description"><a href="<?php echo esc_url( home_url( '/price/#price2' ) ); ?>" class="footer__link">体験ダイビング</a></li>
+                <li class="footer__description"><a href="<?php echo esc_url( home_url( '/price/#price3' ) ); ?>" class="footer__link">ファンダイビング</a></li>
               </ul>
           </div>
           <div class="footer__items-4">
@@ -88,7 +94,8 @@
                 <div class="footer__img2">
                   <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
                 </div>
-                <a href="./faq.html" class="footer__link">よくある質問</a>
+                <a href="<?php echo get_permalink( get_page_by_path('faq') ); ?>
+                " class="footer__link">よくある質問</a>
               </li>
             </ul>
 
@@ -97,7 +104,7 @@
                   <div class="footer__img2">
                     <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
                   </div>
-                <a href="./policy.html" class="footer__link">プライバシー<br class="u-mobile">ポリシー</a>
+                <a href="<?php echo get_permalink( get_page_by_path('privacyporicy') ); ?>" class="footer__link">プライバシー<br class="u-mobile">ポリシー</a>
               </li>
             </ul>
 
@@ -106,7 +113,7 @@
                   <div class="footer__img2">
                     <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
                   </div>
-                  <a href="./terms.html" class="footer__link">利用規約</a>
+                  <a href="<?php echo get_permalink( get_page_by_path('terms-of-service') ); ?>" class="footer__link">利用規約</a>
               </li>
             </ul>
 
@@ -115,7 +122,7 @@
                 <div class="footer__img2">
                   <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
                 </div>
-                <a href="./contact.html" class="footer__link">お問い合わせ</a>
+                <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="footer__link">お問い合わせ</a>
               </li>
             </ul>
           </div>

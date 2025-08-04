@@ -2,8 +2,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/blog-pc-mv.jpg" media="(min-width: 768px)" >
-      <img src="./assets/images/blog-sp-mv.jpg" alt="魚の大群の画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/blog-pc-mv.webp" media="(min-width: 768px)" >
+      <img src="./assets/images/blog-sp-mv.webp" alt="魚の大群の画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -62,9 +62,6 @@
     </section>
 <?php endwhile; endif ?>
 
-
-
-
     <!-- contact -->
     <section id="contact" class="contact contact-layout contact-fish">
       <div class="contact__inner inner">
@@ -72,7 +69,7 @@
         <div class="contact__container">
           <div class="contact__content">
             <div class="contact__img2">
-              <img src="./assets/images/contact.svg" alt="CodeUps">
+              < src="<?php echo get_theme_file_uri(); ?>/images/contact.svg" alt="CodeUps">
             </div>
             <div class="contact__box">
               <p class="contact__text">
@@ -107,6 +104,5 @@
       </div>
     </section>
     <!-- contact -->
-
   </main>
 <?php get_footer(); ?>

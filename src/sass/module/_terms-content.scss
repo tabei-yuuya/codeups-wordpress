@@ -12,11 +12,15 @@
 }
 
 .terms-content__items{
+  margin-left: rem(15);
   margin-top: rem(30);
   font-family: $third-font-family;
   font-weight: $regular;
   color: $black;
   line-height: 2;
+    @include mq("md"){
+      margin-left: 0;
+  }
 }
 
 .terms-content__items h2{
