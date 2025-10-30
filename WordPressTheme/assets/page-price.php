@@ -35,18 +35,18 @@
         <div class="price-content__wrapper">
           <table id="plice1" class="price-content__list price-list">
           <?php
-            $courses = SCF::get('license_group');
+            $courses = SCF::get('service_group');
 
             foreach ($courses as $index => $course) :
             ?>
               <tr id="price1" class="price-list__row">
                 <?php if ($index === 0): ?>
                   <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
-                    <span>ライセンス講習</span>
+                    <span>サービスプラン</span>
                   </th>
                 <?php endif; ?>
-                <td class="price-list__course"><?php echo $course['license_name']; ?></td>
-                <td class="price-list__value"><?php echo $course['license_price']; ?></td>
+                <td class="price-list__course"><?php echo $course['service_name']; ?></td>
+                <td class="price-list__value"><?php echo $course['service_price']; ?></td>
               </tr>
             <?php endforeach; ?>
           </table>
@@ -59,7 +59,7 @@
               <tr id="price2" class="price-list__row">
                 <?php if ($index === 0): ?>
                   <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
-                    <span>体験ダイビング</span>
+                    <span>体験プラン</span>
                   </th>
                 <?php endif; ?>
                 <td class="price-list__course"><?php echo $course['experience_name']; ?></td>
@@ -69,35 +69,18 @@
           </table>
           <table id="plice3" class="price-content__list price-list">
           <?php
-            $courses = SCF::get('fundiving_group');
+            $courses = SCF::get('stay_group');
 
             foreach ($courses as $index => $course) :
             ?>
               <tr id="price3" class="price-list__row">
                 <?php if ($index === 0): ?>
                   <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
-                    <span>ファンダイビング</span>
+                    <span>宿泊スタイル</span>
                   </th>
                 <?php endif; ?>
-                <td class="price-list__course"><?php echo $course['fundiving_name']; ?></td>
-                <td class="price-list__value"><?php echo $course['fundiving_price']; ?></td>
-              </tr>
-            <?php endforeach; ?>
-          </table>
-          <table id="plice4" class="price-content__list price-list">
-          <?php
-            $courses = SCF::get('special_group');
-
-            foreach ($courses as $index => $course) :
-            ?>
-              <tr class="price-list__row">
-                <?php if ($index === 0): ?>
-                  <th class="price-list__head" rowspan="<?php echo count($courses); ?>">
-                    <span>スペシャルダイビング</span>
-                  </th>
-                <?php endif; ?>
-                <td class="price-list__course"><?php echo $course['special_name']; ?></td>
-                <td class="price-list__value"><?php echo $course['special_price']; ?></td>
+                <td class="price-list__course"><?php echo $course['stay_name']; ?></td>
+                <td class="price-list__value"><?php echo $course['stay_price']; ?></td>
               </tr>
             <?php endforeach; ?>
           </table>

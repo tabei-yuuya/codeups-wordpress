@@ -82,7 +82,7 @@ function Change_menulabel() {
 
   function custom_posts_per_page_for_category( $query ) {
   if ( !is_admin() && $query->is_main_query() && $query->is_category() ) {
-    $query->set( 'posts_per_page', 4 ); // カテゴリーページだけ6件表示
+    $query->set( 'posts_per_page', 6 ); // カテゴリーページだけ6件表示
   }
 }
 add_action( 'pre_get_posts', 'custom_posts_per_page_for_category' );
@@ -176,3 +176,12 @@ function remove_specific_body_classes( $classes ) {
   return array_diff( $classes, $remove_classes );
 }
 add_filter( 'body_class', 'remove_specific_body_classes' );
+
+// define a function
+function disable_redirect_canonical( $redirect_url ) {
+    if ( is_singular( 'campaign' ) )
+    $redirect_url = false;
+    return $redirect_url;
+}
+// add function to filter hook
+add_filter('redirect_canonical','disable_redirect_canonical');

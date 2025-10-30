@@ -46,6 +46,7 @@
 .card__title{
   margin-top: rem(3);
   font-size: rem(16);
+  flex: 1;
   @include mq("md"){
     margin-top: rem(7);
   }

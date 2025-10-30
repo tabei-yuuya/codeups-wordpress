@@ -24,7 +24,7 @@
     <?php } ?>
 
 
-    <section class="campaign-content campaign-content-layout content-fish">
+     <section class="campaign-content campaign-content-layout content-fish">
       <div class="campaign-content__inner inner">
       <ol class="campaign-content__tab tab">
         <li><a href="<?php echo get_post_type_archive_link('campaign') ?>" class="tab__item active">all</a></li>
@@ -43,10 +43,6 @@
         <div class="campaign-content__area">
         <?php
           $paged = get_query_var('paged') ? get_query_var('paged') : 1;
-
-          // スマホ判定（WP組み込み関数）
-          $per_page = wp_is_mobile() ? 4 : 6; // スマホは4件、それ以外は6件
-
           $args = array(
               'post_type' => 'campaign', // 投稿タイプを適宜変更
               'posts_per_page' => 4,
@@ -127,6 +123,9 @@
         </div>
       </div>
     </section>
+
+
+
     <!-- campaign-page -->
 
     <!-- contact -->

@@ -183,7 +183,7 @@
       </div>
         <div class="about__content">
           <div class="about__img1 about__img1--sm">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/ocean1.webp" alt="オレンジ色と白色の屋根の上に、シーサーの置物が置いてある画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/camp-mv1.jpg" alt="オレンジ色と白色の屋根の上に、シーサーの置物が置いてある画像">
           </div>
           <div class="about__img1 about__img1--lg">
             <img src="<?php echo get_theme_file_uri(); ?>/images/ocean2.webp" alt="海の中を2匹の黄色い魚が泳いでいる画像">

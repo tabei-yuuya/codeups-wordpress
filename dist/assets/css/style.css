@@ -1786,6 +1786,7 @@ a {
 }
 
 .card__title {
+	flex: 1;
 	font-size: 1rem;
 	margin-top: 0.1875rem;
 }
