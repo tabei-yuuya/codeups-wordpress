@@ -3,8 +3,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/campaign-pc-mv.webp" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/campaign-sp-mv.webp" alt="2匹の魚が泳いでいる様子">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/campaign-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/campaign-mv.webp" alt="秋のキャンプ場の画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -92,7 +92,7 @@
                       <p class="card__contact-text">ご予約・お問い合わせはコチラ</p>
                     </div>
                     <div class="card__btn">
-                      <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
+                      <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
                       </div>
                   </div>
                 </div>
@@ -161,7 +161,7 @@
               </p>
 
               <div class="contact__btn">
-                <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
+                <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
               </div>
           </div>
 

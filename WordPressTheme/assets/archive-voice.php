@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture>
-      <source srcset="<?php echo get_theme_file_uri(); ?>//images/voice-pc-mv.webp" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>//images/voice-sp-mv.webp" alt="5人のダイバーがエメラルドグリーンの海を泳いでいる様子">
+      <source srcset="<?php echo get_theme_file_uri(); ?>//images/voice-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>//images/voice-mv.webp" alt="5人のダイバーがエメラルドグリーンの海を泳いでいる様子">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -170,7 +170,7 @@
               </p>
 
               <div class="contact__btn">
-                <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
+                <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
               </div>
           </div>
 

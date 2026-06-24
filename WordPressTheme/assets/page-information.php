@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/info-pc-mv.webp" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/info-sp-mv.webp" alt="ダイバーが珊瑚礁の横を泳いでいる画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/info-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/info-mv.webp" alt="森の見える川の上にボートが浮かんでいる画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -49,10 +49,10 @@
             <div class="info-card__contents">
               <h2 class="info-card__title">サービスプラン</h2>
               <div class="info-card__border border"></div>
-              <p class="info-card__text">泳げない人も、ちょっと水が苦手な人も、ダイビングを「安全に」楽しんでいただけるよう、スタッフがサポートいたします&#33;スキューバダイビングを楽しむためには最低限の知識とスキルが要求されます。知識やスキルと言ってもそんなに難しい事ではなく、安全に楽しむ事を目的としたものです。プロダイバーの指導のもと知識とスキルを習得しCカードを取得して、ダイバーになろう&#33;</p>
+              <p class="info-card__text">手ぶらで楽しめるキャンプを提供する当サイトでは、道具一式が揃う『レンタルフルセットプラン』と、食材・機材込みで手軽にBBQが楽しめる『BBQセットプラン』ご用意。初心者からファミリーまで、気軽に自然を満喫できます。</p>
             </div>
             <figure class="info-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/info-license.webp" alt="5人のダイバーが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-service.webp" alt="キャンプ場の焚き火の近くで椅子に座りコーヒーを飲んでいる女性の画像">
             </figure>
           </div>
         </div>
@@ -61,10 +61,10 @@
             <div class="info-card__contents">
               <h2 class="info-card__title">体験プラン</h2>
               <div class="info-card__border border"></div>
-              <p class="info-card__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意&#33;</p>
+              <p class="info-card__text">自然の魅力を丸ごと味わえる『体験プラン』。テントサウナやキャンプファイヤー、釣り体験、キャンプ飯作りなど、五感で楽しむアクティビティが満載。仲間や家族と、ここでしかできない特別な時間を過ごせます。</p>
             </div>
             <figure class="info-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/info-fundiving.webp" alt="珊瑚礁の周りを魚の群れが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-campfire.webp" alt="珊瑚礁の周りを魚の群れが泳いでいる画像">
             </figure>
           </div>
         </div>
@@ -73,10 +73,10 @@
             <div class="info-card__contents">
               <h2 class="info-card__title">宿泊スタイル</h2>
               <div class="info-card__border border"></div>
-              <p class="info-card__text">ブランクダイバー、ライセンスを取り立ての方も安心！沖縄本島を代表する「青の洞窟」（真栄田岬）やケラマ諸島などメジャーなポイントはモチロンのこと、最北端「辺戸岬」や最南端の「大渡海岸」等もご用意&#33;</p>
+              <p class="info-card__text">泊まって楽しむ『宿泊プラン』では、手軽に贅沢なアウトドアを満喫できるグランピング、家族みんなで楽しめるファミリーキャンプ、静かな時間を過ごすソロキャンプをご用意。スタイルに合わせて、あなたらしいキャンプ体験を。</p>
             </div>
             <figure class="info-card__img">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/info-experience.webp" alt="5人のダイバーが泳いでいる画像">
+              <img src="<?php echo get_theme_file_uri(); ?>/images/info-stay.webp" alt="テントの中から外の森の中を見ている画像">
             </figure>
           </div>
         </div>
@@ -118,7 +118,7 @@
               </p>
 
               <div class="contact__btn">
-                <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
+                <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
               </div>
           </div>
 

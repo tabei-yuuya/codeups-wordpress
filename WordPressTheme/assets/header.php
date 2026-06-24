@@ -55,7 +55,7 @@
           <li class="header__list">
             <a href="<?php echo get_permalink( get_page_by_path('information') ); ?>" class="header__link">
               <p class="header__text">Information</p>
-              <p class="header__text header__text--sub">ダイビング情報</p>
+              <p class="header__text header__text--sub">キャンピング情報</p>
             </a>
           </li>
           <li class="header__list">
@@ -107,24 +107,24 @@
               <ul class="drawer-menu__item">
                 <li class="drawer-menu__term">
                   <div class="drawer-menu__img2">
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                   </div>
                 <a href="<?php echo get_post_type_archive_link('campaign'); ?>" class="drawer-menu__link">キャンペーン</a>
                 </li>
                 <li class="drawer-menu__description">
-                  <a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-2' ) ); ?>" class="drawer-menu__link">ライセンス取得</a>
+                  <a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-2' ) ); ?>" class="drawer-menu__link">サービスプラン</a>
                 </li>
                 <li class="drawer-menu__description">
-                  <a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-3' ) ); ?>" class="drawer-menu__link">貸切体験ダイビング</a>
+                  <a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-3' ) ); ?>" class="drawer-menu__link">体験プラン</a>
                 </li>
                 <li class="drawer-menu__description">
-                  <a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-4' ) ); ?>" class="drawer-menu__link">ナイトダイビング</a>
+                  <a href="<?php echo esc_url( home_url( '/campaign/#tab__menu-4' ) ); ?>" class="drawer-menu__link">宿泊スタイル</a>
                 </li>
               </ul>
             <ul class="drawer-menu__item">
               <li class="drawer-menu__term">
                 <div class="drawer-menu__img2">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                 </div>
                 <a href="<?php echo get_permalink( get_page_by_path('about-us') ); ?>" class="drawer-menu__link">私たちについて</a>
               </li>
@@ -134,24 +134,24 @@
             <ul class="drawer-menu__item">
               <li class="drawer-menu__term">
                 <div class="drawer-menu__img2">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                 </div>
-                <a href="<?php echo get_permalink( get_page_by_path('information') ); ?>" class="drawer-menu__link">ダイビング情報</a>
+                <a href="<?php echo get_permalink( get_page_by_path('information') ); ?>" class="drawer-menu__link">キャンピング情報</a>
               </li>
               <li class="drawer-menu__description">
-                <a href="<?php echo esc_url( home_url( '/information/#tab__menu-1' ) ); ?>" class="drawer-menu__link">ライセンス講習</a>
+                <a href="<?php echo esc_url( home_url( '/information/#tab__menu-1' ) ); ?>" class="drawer-menu__link">サービスプラン</a>
               </li>
               <li class="drawer-menu__description">
-                <a href="<?php echo esc_url( home_url( '/information/#tab__menu-2' ) ); ?>" class="drawer-menu__link">体験ダイビング</a>
+                <a href="<?php echo esc_url( home_url( '/information/#tab__menu-2' ) ); ?>" class="drawer-menu__link">体験プラン</a>
               </li>
               <li class="drawer-menu__description">
-                <a href="<?php echo esc_url( home_url( '/information/#tab__menu-3' ) ); ?>" class="drawer-menu__link">ファンダイビング</a>
+                <a href="<?php echo esc_url( home_url( '/information/#tab__menu-3' ) ); ?>" class="drawer-menu__link">宿泊スタイル</a>
               </li>
             </ul>
             <ul class="drawer-menu__item">
               <li class="drawer-menu__term">
                 <div class="drawer-menu__img2">
-                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                  <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                 </div>
                 <a href="<?php echo get_permalink( get_page_by_path('blog') ); ?>" class="footer__link">ブログ</a>
               </li>
@@ -161,7 +161,7 @@
                 <ul class="drawer-menu__item">
                   <li class="drawer-menu__term">
                     <div class="drawer-menu__img2">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                     </div>
                   <a href="<?php echo get_post_type_archive_link('voice'); ?>" class="drawer-menu__link">お客様の声</a>
                   </li>
@@ -169,18 +169,18 @@
                 <ul class="drawer-menu__item">
                   <li class="drawer-menu__term">
                     <div class="drawer-menu__img2">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                     </div>
                     <a href="<?php echo get_permalink( get_page_by_path('price') ); ?>" class="drawer-menu__link">料金一覧</a>
                   </li>
                   <li class="drawer-menu__description">
-                    <a href="<?php echo esc_url( home_url( '/price/#price1' ) ); ?>" class="drawer-menu__link">ライセンス講習</a>
+                    <a href="<?php echo esc_url( home_url( '/price/#price1' ) ); ?>" class="drawer-menu__link">サービスプラン</a>
                   </li>
                   <li class="drawer-menu__description">
-                    <a href="<?php echo esc_url( home_url( '/price/#price2' ) ); ?>" class="drawer-menu__link">体験ダイビング</a>
+                    <a href="<?php echo esc_url( home_url( '/price/#price2' ) ); ?>" class="drawer-menu__link">体験プラン</a>
                   </li>
                   <li class="drawer-menu__description">
-                    <a href="<?php echo esc_url( home_url( '/price/#price3' ) ); ?>" class="drawer-menu__link">ファンダイビング</a>
+                    <a href="<?php echo esc_url( home_url( '/price/#price3' ) ); ?>" class="drawer-menu__link">宿泊スタイル</a>
                   </li>
                 </ul>
             </div>
@@ -188,7 +188,7 @@
               <ul class="drawer-menu__item">
                 <li class="drawer-menu__term">
                   <div class="drawer-menu__img2">
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                   </div>
                   <a href="<?php echo get_permalink( get_page_by_path('faq') ); ?>" class="drawer-menu__link">よくある質問</a>
                 </li>
@@ -196,7 +196,7 @@
               <ul class="drawer-menu__item">
                 <li class="drawer-menu__term">
                     <div class="drawer-menu__img2">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                     </div>
                   <a href="<?php echo get_permalink( get_page_by_path('privacyporicy') ); ?>" class="drawer-menu__link">プライバシー<br class="u-mobile">ポリシー</a>
                 </li>
@@ -204,7 +204,7 @@
               <ul class="drawer-menu__item">
                 <li class="drawer-menu__term">
                     <div class="footer__img2">
-                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                      <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                     </div>
                     <a href="<?php echo get_permalink( get_page_by_path('terms-of-service') ); ?>" class="drawer-menu__link">利用規約</a>
                 </li>
@@ -212,7 +212,7 @@
               <ul class="drawer-menu__item">
                 <li class="drawer-menu__term">
                   <div class="drawer-menu__img2">
-                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.svg" alt="ヒトデの画像">
+                    <img src="<?php echo get_theme_file_uri(); ?>/images/hitode.webp" alt="ヒトデの画像">
                   </div>
                   <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="drawer-menu__link">お問い合わせ</a>
                 </li>

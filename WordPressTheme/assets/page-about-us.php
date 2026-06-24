@@ -3,8 +3,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/about-pc-mv.webp" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/about-sp-mv.webp" alt="シーサーの銅像の画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>/images/about-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>/images/about-mv.webp" alt="シーサーの銅像の画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">
@@ -34,10 +34,10 @@
           <div class="about-content__wrapper about">
           <div class="about__content">
             <div class="about__img1 about__img1--sm u-desktop">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/ocean1.webp" alt="オレンジ色と白色の屋根の上に、シーサーの置物が置いてある画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/camp-tent.webp" alt="森の中に１つのテントが置いてある画像">
             </div>
             <div class="about__img1 about__img1--lg about__img1--about-page">
-              <img src="<?php echo get_theme_file_uri(); ?>/images/ocean2.webp" alt="海の中を2匹の黄色い魚が泳いでいる画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/camp-tree.webp" alt="キャンプ場の画像">
             </div>
           </div>
             <div class="about__box about__box--about-page">
@@ -79,10 +79,10 @@
       </ul>
 
       <?php
-          $imgGroup = SCF::get('modalGroup');
+          $imgGroup = SCF::get('galleryGroup');
           foreach ($imgGroup as $index => $fields) :
-            $imgurl = wp_get_attachment_image_src($fields['modal'], 'large');?>
-            <?php if (empty($fields['modal'])) : ?>
+            $imgurl = wp_get_attachment_image_src($fields['gallery_1'], 'large');?>
+            <?php if (empty($fields['gallery_1'])) : ?>
               <img src="<?php echo get_template_directory_uri(); ?>/images/no-image.webp" alt="画像がありません">
             <?php else : ?>
               <div id="<?php echo $index + 1; ?>" class="about-gallery-modal modal js-modal">
@@ -135,7 +135,7 @@
               </p>
 
               <div class="contact__btn">
-                <a href="#" class="btn">Contact us<span class="btn__arrow"></span></a>
+                <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
               </div>
           </div>
 

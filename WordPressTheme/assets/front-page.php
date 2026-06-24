@@ -183,10 +183,10 @@
       </div>
         <div class="about__content">
           <div class="about__img1 about__img1--sm">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/camp-mv1.jpg" alt="オレンジ色と白色の屋根の上に、シーサーの置物が置いてある画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/camp-tent.webp" alt="森の中に１つのテントが置いてある画像">
           </div>
           <div class="about__img1 about__img1--lg">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/ocean2.webp" alt="海の中を2匹の黄色い魚が泳いでいる画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/camp-tree.webp" alt="キャンプ場の画像">
           </div>
         </div>
           <div class="about__box">
@@ -216,7 +216,7 @@
       </div>
       <div class="information__wrapper">
         <div class="information__img js-colorbox">
-          <img src="<?php echo get_theme_file_uri(); ?>/images/info.webp" alt="珊瑚礁の近くを泳ぐ黄色と青色の魚たち">
+          <img src="<?php echo get_theme_file_uri(); ?>/images/top-information.jpg" alt="焚き火の画像">
         </div>
 
         <div class="information__box">
@@ -327,7 +327,7 @@ endif;
                       </div>
                       <div class="voice-card__figure">
                         <div class="voice-card__img js-colorbox">
-                          <img src="<?php echo get_theme_file_uri(); ?>/images/voice1.jpg" alt="帽子を被った笑顔の女性">
+                          <img src="<?php echo get_theme_file_uri(); ?>/images/voice1.webp" alt="帽子を被った笑顔の女性">
                         </div>
                       </div>
                 </div>
@@ -353,7 +353,7 @@ endif;
                       </div>
                       <div class="voice-card__figure">
                         <div class="voice-card__img js-colorbox">
-                          <img src="<?php echo get_theme_file_uri(); ?>/images/voice2.jpg" alt="グットポーズをしている男性の画像">
+                          <img src="<?php echo get_theme_file_uri(); ?>/images/voice2.webp" alt="グットポーズをしている男性の画像">
                         </div>
                       </div>
                 </div>
@@ -386,23 +386,23 @@ endif;
         </div>
         <div class="price__container">
           <div class="price__img1 u-mobile">
-            <img src="<?php echo get_theme_file_uri(); ?>/images/price2.webp" alt="海を泳いでいる亀の画像">
+            <img src="<?php echo get_theme_file_uri(); ?>/images/top-price.webp" alt="海を泳いでいる亀の画像">
           </div>
             <div class="price__content">
               <div class="price__lists">
               <?php
                 $price_page_id = 22;
-                $courses = SCF::get('license_group', $price_page_id);
+                $courses = SCF::get('service_group', $price_page_id);
 
                 if (!empty($courses)) :
                 ?>
                 <dl class="price__list">
                 <?php foreach ($courses as $index => $course) : ?>
                   <?php if ($index === 0): ?>
-                  <dt class="price__list-title">ライセンス講習</dt>
+                  <dt class="price__list-title">サービスコース</dt>
                   <?php endif; ?>
-                  <dt class="price__term"><?php echo $course['license_name']; ?></dt>
-                  <dd class="price__description"><?php echo $course['license_price']; ?></dd>
+                  <dt class="price__term"><?php echo $course['service_name']; ?></dt>
+                  <dd class="price__description"><?php echo $course['service_price']; ?></dd>
                   <?php endforeach; ?>
                 </dl>
                 <?php endif; ?>
@@ -415,7 +415,7 @@ endif;
                 <dl class="price__list">
                 <?php foreach ($courses as $index => $course) : ?>
                   <?php if ($index === 0): ?>
-                  <dt class="price__list-title">体験ダイビング</dt>
+                  <dt class="price__list-title">体験プラン</dt>
                   <?php endif; ?>
                   <dt class="price__term"><?php echo $course['experience_name']; ?></dt>
                   <dd class="price__description"><?php echo $course['experience_price']; ?></dd>
@@ -424,33 +424,17 @@ endif;
                 <?php endif; ?>
                 <?php
                 $price_page_id = 22;
-                $courses = SCF::get('fundiving_group', $price_page_id);
+                $courses = SCF::get('stay_group', $price_page_id);
 
                 if (!empty($courses)) :
                 ?>
                 <dl class="price__list">
                 <?php foreach ($courses as $index => $course) : ?>
                   <?php if ($index === 0): ?>
-                  <dt class="price__list-title">体験ダイビング</dt>
+                  <dt class="price__list-title">宿泊スタイル</dt>
                   <?php endif; ?>
-                  <dt class="price__term"><?php echo $course['fundiving_name']; ?></dt>
-                  <dd class="price__description"><?php echo $course['fundiving_price']; ?></dd>
-                  <?php endforeach; ?>
-                </dl>
-                <?php endif; ?>
-                <?php
-                $price_page_id = 22;
-                $courses = SCF::get('special_group', $price_page_id);
-
-                if (!empty($courses)) :
-                ?>
-                <dl class="price__list">
-                <?php foreach ($courses as $index => $course) : ?>
-                  <?php if ($index === 0): ?>
-                  <dt class="price__list-title">スペシャルダイビング</dt>
-                  <?php endif; ?>
-                  <dt class="price__term"><?php echo $course['special_name']; ?></dt>
-                  <dd class="price__description"><?php echo $course['special_price']; ?></dd>
+                  <dt class="price__term"><?php echo $course['stay_name']; ?></dt>
+                  <dd class="price__description"><?php echo $course['stay_price']; ?></dd>
                   <?php endforeach; ?>
                 </dl>
                 <?php endif; ?>

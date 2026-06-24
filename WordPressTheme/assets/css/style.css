@@ -958,8 +958,10 @@ a {
 	letter-spacing: -0.07em;
 	line-height: 1;
 	margin-top: 0.8125rem;
+	padding-right: rem(2);
 	text-align: right;
 	width: 25%;
+
 }
 
 .price__description:nth-of-type(2) {

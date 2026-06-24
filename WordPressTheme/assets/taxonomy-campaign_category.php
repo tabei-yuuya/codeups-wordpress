@@ -105,7 +105,7 @@ $the_query = new WP_Query($args);
                 <p class="card__contact-text">ご予約・お問い合わせはコチラ</p>
               </div>
               <div class="card__btn">
-                <a href="<?php the_permalink(); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
+                <a href="<?php echo get_permalink( get_page_by_path('contact') ); ?>" class="btn">Contact us<span class="btn__arrow"></span></a>
               </div>
             </div>
           </div>

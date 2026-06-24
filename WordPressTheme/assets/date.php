@@ -4,8 +4,8 @@
 <div class="mv-underlayer">
   <div class="mv-underlayer__inner">
     <picture class="mv-underlayer__picture">
-      <source srcset="<?php echo get_theme_file_uri(); ?>/images/blog-pc-mv.webp" media="(min-width: 768px)" >
-      <img src="<?php echo get_theme_file_uri(); ?>/images/blog-sp-mv.webp" alt="魚の大群の画像">
+      <source srcset="<?php echo get_theme_file_uri(); ?>//images/blog-mv.webp" media="(min-width: 768px)" >
+      <img src="<?php echo get_theme_file_uri(); ?>//images/blog-mv.webp" alt="青空と森の画像">
     </picture>
     </div>
     <div class="mv-underlayer__title">

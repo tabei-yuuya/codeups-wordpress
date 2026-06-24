@@ -185,3 +185,10 @@ function disable_redirect_canonical( $redirect_url ) {
 }
 // add function to filter hook
 add_filter('redirect_canonical','disable_redirect_canonical');
+
+function change_posts_per_page($query) {
+  if (!is_admin() && $query->is_main_query() && is_home()) {
+    $query->set('posts_per_page', 10);
+  }
+}
+add_action('pre_get_posts', 'change_posts_per_page');
